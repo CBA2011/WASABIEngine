@@ -5,7 +5,7 @@ Version 1.0
 Copyright (C) 2011 Christian Becker-Asano.
 All rights reserved.
 
-Contact: Christian Becker-Asano (christian@becker-asano.de)
+Contact: Christian Becker-Asano (christian (at) becker-asano (dot) de)
 
 1. Compiling
 This library can be compiled as shared library (dll) using "Qt Creator" version 2.3.0 (MinGW4.4, Qt4.7.3)
