@@ -1,0 +1,217 @@
+\hypertarget{class_emotion_container}{
+\section{\-Emotion\-Container \-Class \-Reference}
+\label{class_emotion_container}\index{\-Emotion\-Container@{\-Emotion\-Container}}
+}
+
+
+{\ttfamily \#include $<$\-Emotion\-Container.\-h$>$}
+
+\-Inheritance diagram for \-Emotion\-Container\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_emotion_container}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_emotion_container_a0cd2f36521f30b93582231d00c3ee8e9}{\-Emotion\-Container} ()
+\item 
+\hyperlink{class_emotion_container_ab47c17d4f7ce7d862fdf278d7878bdcf}{\-Emotion\-Container} (const \hyperlink{class_emotion_container}{\-Emotion\-Container} \&emo\-Con)
+\item 
+\hypertarget{class_emotion_container_a70d9dd45542e029d4eba3dcbddf1b717}{
+virtual void {\bfseries write\-Transferable} (std\-::ostream \&ostr) const }
+\label{class_emotion_container_a70d9dd45542e029d4eba3dcbddf1b717}
+
+\item 
+\hypertarget{class_emotion_container_a33d17071e475f57c9856f69464eb4db5}{
+virtual void {\bfseries read\-Transferable} (std\-::istream \&)}
+\label{class_emotion_container_a33d17071e475f57c9856f69464eb4db5}
+
+\item 
+virtual void \hyperlink{class_emotion_container_a8c63f4c9e9c558b4cecdf1aab9c81bd0}{update} (float \-\_\-dt)
+\item 
+\hypertarget{class_emotion_container_a962cd6110a2793a2d5c4582ad0904b78}{
+virtual void {\bfseries init} ()}
+\label{class_emotion_container_a962cd6110a2793a2d5c4582ad0904b78}
+
+\item 
+\hypertarget{class_emotion_container_abd39cb9d11335f30eff2392f93b73a3d}{
+std\-::string {\bfseries get\-Type} ()}
+\label{class_emotion_container_abd39cb9d11335f30eff2392f93b73a3d}
+
+\item 
+\hypertarget{class_emotion_container_a547c9f7cde3d3408ea0811a28395e3e8}{
+\-A\-S\-Vector\-M\-Map {\bfseries get\-Affect\-Likelihoods} ()}
+\label{class_emotion_container_a547c9f7cde3d3408ea0811a28395e3e8}
+
+\item 
+\hypertarget{class_emotion_container_a628c9fcecdf630c159c336b6197a2134}{
+\hyperlink{class_affective_state}{\-Affective\-State} $\ast$ {\bfseries get\-Affective\-State\-By\-Type} (std\-::string type)}
+\label{class_emotion_container_a628c9fcecdf630c159c336b6197a2134}
+
+\item 
+\hypertarget{class_emotion_container_a5a1cf35a1c16bae3d44ce4311256994c}{
+void {\bfseries dump\-Affective\-States} (std\-::ostream \&ostr)}
+\label{class_emotion_container_a5a1cf35a1c16bae3d44ce4311256994c}
+
+\item 
+\hypertarget{class_emotion_container_a3222476a63c2f978a29d416b7da1d1a3}{
+int {\bfseries get\-A\-S\-Id} (std\-::string emotionclass=\char`\"{}any\char`\"{})}
+\label{class_emotion_container_a3222476a63c2f978a29d416b7da1d1a3}
+
+\item 
+\hypertarget{class_emotion_container_a2a62a951674e48c4fc7e5721ee8eb5c4}{
+std\-::string {\bfseries get\-A\-S\-Type} (std\-::string emotionclass=\char`\"{}any\char`\"{})}
+\label{class_emotion_container_a2a62a951674e48c4fc7e5721ee8eb5c4}
+
+\item 
+\hypertarget{class_emotion_container_aef8c2ba099d035998c90383fece30e20}{
+float {\bfseries get\-A\-S\-Likelihood} (std\-::string emotionclass=\char`\"{}any\char`\"{})}
+\label{class_emotion_container_aef8c2ba099d035998c90383fece30e20}
+
+\item 
+\hypertarget{class_emotion_container_a7b6b49c2ec038157fee83e1f7c6afc51}{
+bool {\bfseries is\-Active} ()}
+\label{class_emotion_container_a7b6b49c2ec038157fee83e1f7c6afc51}
+
+\item 
+\hypertarget{class_emotion_container_a8edcf7d2c76e3a49d09f4cb1ea1b6c43}{
+bool {\bfseries trigger\-A\-S} (std\-::string \-\_\-type, double new\-Lifetime=-\/1.\-0)}
+\label{class_emotion_container_a8edcf7d2c76e3a49d09f4cb1ea1b6c43}
+
+\item 
+void \hyperlink{class_emotion_container_a2438c1f0119baf3f3df140f246d50783}{update\-Affect\-Likelihoods} (bool force\-P\-A\-Dupdate=false)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_emotion_container_af50ab9b2b4955a337b9659ce4f795fed}{
+double {\bfseries dt}}
+\label{class_emotion_container_af50ab9b2b4955a337b9659ce4f795fed}
+
+\item 
+\hypertarget{class_emotion_container_ac84d0dcd287bce8986c76e84bd46bbd9}{
+std\-::vector$<$ \hyperlink{class_affective_state}{\-Affective\-State} $\ast$ $>$ {\bfseries affective\-States}}
+\label{class_emotion_container_ac84d0dcd287bce8986c76e84bd46bbd9}
+
+\item 
+\hypertarget{class_emotion_container_af004404f7cf8b28c0be3b6875fda153a}{
+\-Affect\-Type\-Likelihoods\-M\-Map {\bfseries atlmmap}}
+\label{class_emotion_container_af004404f7cf8b28c0be3b6875fda153a}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_emotion_container_ae4ab08ca4de2ee7cbbdd6178e38dc560}{
+bool {\bfseries build\-Primary\-Emotion} (std\-::vector$<$ float $>$ v, std\-::string type, std\-::string decay\-Func)}
+\label{class_emotion_container_ae4ab08ca4de2ee7cbbdd6178e38dc560}
+
+\item 
+\hypertarget{class_emotion_container_aa280b192728fd4ab900fd6ce8792a995}{
+bool {\bfseries build\-Secondary\-Emotion} (std\-::string secfilename)}
+\label{class_emotion_container_aa280b192728fd4ab900fd6ce8792a995}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_emotion_container_a55a74daa41036de8653c9d9c92894544}{
+std\-::string {\bfseries type}}
+\label{class_emotion_container_a55a74daa41036de8653c9d9c92894544}
+
+\item 
+\hypertarget{class_emotion_container_a710ccc1213bd8ee3dd9cc79efa6a129d}{
+\-A\-S\-Vector\-M\-Map {\bfseries asvmmap}}
+\label{class_emotion_container_a710ccc1213bd8ee3dd9cc79efa6a129d}
+
+\item 
+\hypertarget{class_emotion_container_a35dc16eeb7df5034d5a84e151ecf7edf}{
+bool {\bfseries active}}
+\label{class_emotion_container_a35dc16eeb7df5034d5a84e151ecf7edf}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_emotion_container_abcef228967f40c7b02f677e5fa9272fa}{
+class \-W\-A\-S\-A\-B\-I\-E\-N\-G\-I\-N\-E\-S\-H\-A\-R\-E\-D\-\_\-\-E\-X\-P\-O\-R\-T {\bfseries coga\-Emotional\-Attendee}}
+\label{class_emotion_container_abcef228967f40c7b02f677e5fa9272fa}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Diese \-Klasse kapselt alle physikalischen \-Variablen des \-Dynamik-\/\-Raumes. 
+
+\-Definition at line 64 of file \-Emotion\-Container.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_emotion_container_a0cd2f36521f30b93582231d00c3ee8e9}{
+\index{\-Emotion\-Container@{\-Emotion\-Container}!\-Emotion\-Container@{\-Emotion\-Container}}
+\index{\-Emotion\-Container@{\-Emotion\-Container}!EmotionContainer@{\-Emotion\-Container}}
+\subsubsection[{\-Emotion\-Container}]{\setlength{\rightskip}{0pt plus 5cm}\-Emotion\-Container\-::\-Emotion\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_emotion_container_a0cd2f36521f30b93582231d00c3ee8e9}
+inits the values 
+
+\-Definition at line 134 of file \-Emotion\-Container.\-cc.
+
+\hypertarget{class_emotion_container_ab47c17d4f7ce7d862fdf278d7878bdcf}{
+\index{\-Emotion\-Container@{\-Emotion\-Container}!\-Emotion\-Container@{\-Emotion\-Container}}
+\index{\-Emotion\-Container@{\-Emotion\-Container}!EmotionContainer@{\-Emotion\-Container}}
+\subsubsection[{\-Emotion\-Container}]{\setlength{\rightskip}{0pt plus 5cm}\-Emotion\-Container\-::\-Emotion\-Container (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Emotion\-Container} \&}]{emo\-Con}
+\end{DoxyParamCaption}
+)}}
+\label{class_emotion_container_ab47c17d4f7ce7d862fdf278d7878bdcf}
+\-Simple \-Copy \-Constructor 
+
+\-Definition at line 154 of file \-Emotion\-Container.\-cc.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_emotion_container_a8c63f4c9e9c558b4cecdf1aab9c81bd0}{
+\index{\-Emotion\-Container@{\-Emotion\-Container}!update@{update}}
+\index{update@{update}!EmotionContainer@{\-Emotion\-Container}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void \-Emotion\-Container\-::update (
+\begin{DoxyParamCaption}
+\item[{float}]{\-\_\-dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_emotion_container_a8c63f4c9e9c558b4cecdf1aab9c81bd0}
+\-We perform an update of all \-Affective\-States here, such that the intensity values are recalculated 
+
+\-Reimplemented in \hyperlink{class_emotion_dynamics_a806fec22c1590ea3df5037bf3922a7b6}{\-Emotion\-Dynamics}.
+
+
+
+\-Definition at line 266 of file \-Emotion\-Container.\-cc.
+
+\hypertarget{class_emotion_container_a2438c1f0119baf3f3df140f246d50783}{
+\index{\-Emotion\-Container@{\-Emotion\-Container}!update\-Affect\-Likelihoods@{update\-Affect\-Likelihoods}}
+\index{update\-Affect\-Likelihoods@{update\-Affect\-Likelihoods}!EmotionContainer@{\-Emotion\-Container}}
+\subsubsection[{update\-Affect\-Likelihoods}]{\setlength{\rightskip}{0pt plus 5cm}void \-Emotion\-Container\-::update\-Affect\-Likelihoods (
+\begin{DoxyParamCaption}
+\item[{bool}]{force\-P\-A\-Dupdate = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{class_emotion_container_a2438c1f0119baf3f3df140f246d50783}
+\-This function returns a \-String\-Vector\-Multi\-Map with the following structure\-: \{(string type, $<$vector float$>$=\char`\"{}\char`\"{}$>$ likelihoods), ..\}, where \char`\"{}$<$vector float$>$ likelihoods\char`\"{} contains the likelihoods of every single \hyperlink{class_affect_polygon}{\-Affect\-Polygon} the \hyperlink{class_affective_state}{\-Affective\-State} \char`\"{}type\char`\"{} consists of. 
+
+\-Definition at line 310 of file \-Emotion\-Container.\-cc.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\-Emotion\-Container.\-h\item 
+\-Emotion\-Container.\-cc\end{DoxyCompactItemize}

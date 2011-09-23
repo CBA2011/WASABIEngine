@@ -1,0 +1,401 @@
+\hypertarget{class_affective_state}{
+\section{\-Affective\-State \-Class \-Reference}
+\label{class_affective_state}\index{\-Affective\-State@{\-Affective\-State}}
+}
+
+
+{\ttfamily \#include $<$\-Affective\-State.\-h$>$}
+
+\-Inheritance diagram for \-Affective\-State\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_affective_state}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_affective_state_aa47963a65353591a1e2109987ef624a1}{decay\-Function\-Enum} \{ {\bfseries \-N\-O\-N\-E} =  0, 
+{\bfseries \-L\-I\-N\-E\-A\-R} =  1, 
+{\bfseries \-E\-X\-P\-O\-N\-E\-N\-T\-I\-A\-L} =  2, 
+{\bfseries \-C\-O\-S\-I\-N\-E} =  3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_affective_state_a65e6807f1091c79f44a84c95adb1b4fd}{
+\hyperlink{class_affective_state_a65e6807f1091c79f44a84c95adb1b4fd}{\-Affective\-State} ()}
+\label{class_affective_state_a65e6807f1091c79f44a84c95adb1b4fd}
+
+\begin{DoxyCompactList}\small\item\em \-Default \-Constructor. \end{DoxyCompactList}\item 
+\hypertarget{class_affective_state_a8573788f95c382b5eb6037a2b4f3aa1a}{
+\hyperlink{class_affective_state_a8573788f95c382b5eb6037a2b4f3aa1a}{\-Affective\-State} (const \hyperlink{class_affective_state}{\-Affective\-State} \&as)}
+\label{class_affective_state_a8573788f95c382b5eb6037a2b4f3aa1a}
+
+\begin{DoxyCompactList}\small\item\em \-Copy \-Constructor. \end{DoxyCompactList}\item 
+\hypertarget{class_affective_state_af9b8433c91ed8e02978c3b42ed5ac6b4}{
+{\bfseries \-Affective\-State} (std\-::vector$<$ \hyperlink{class_affect_polygon}{\-Affect\-Polygon} $\ast$ $>$ ap\-\_\-vec)}
+\label{class_affective_state_af9b8433c91ed8e02978c3b42ed5ac6b4}
+
+\item 
+\hypertarget{class_affective_state_a08fc349147b79539acd264b73cec7f26}{
+{\bfseries \-Affective\-State} (\hyperlink{class_affect_polygon}{\-Affect\-Polygon} $\ast$ap)}
+\label{class_affective_state_a08fc349147b79539acd264b73cec7f26}
+
+\item 
+bool \hyperlink{class_affective_state_af7ac4f21de22c0ab43e3889458c61ff2}{add\-Polygon} (std\-::vector$<$ \hyperlink{class_affect_polygon}{\-Affect\-Polygon} $\ast$ $>$ data)
+\item 
+\hypertarget{class_affective_state_a0736c2a1ef6341a6220e10460eeda7dc}{
+bool {\bfseries add\-Polygon} (\hyperlink{class_affect_polygon}{\-Affect\-Polygon} $\ast$polygon)}
+\label{class_affective_state_a0736c2a1ef6341a6220e10460eeda7dc}
+
+\item 
+bool \hyperlink{class_affective_state_a3b824330921fc05fe7dd2f49eec150d2}{set\-Lifetime} (double new\-Lifetime)
+\item 
+bool \hyperlink{class_affective_state_ae03bf91dc1939016fcd45ceb60e7cbf5}{set\-Lifetime} ()
+\item 
+\hypertarget{class_affective_state_a7054661d256830354e34c71549d2b4ae}{
+bool \hyperlink{class_affective_state_a7054661d256830354e34c71549d2b4ae}{trigger} (double \-\_\-lifetime=-\/1)}
+\label{class_affective_state_a7054661d256830354e34c71549d2b4ae}
+
+\begin{DoxyCompactList}\small\item\em to make it easier to \char`\"{}trigger\char`\"{} an \hyperlink{class_affective_state}{\-Affective\-State} \end{DoxyCompactList}\item 
+\hypertarget{class_affective_state_a42be8cbd6088728f2d4995c405373204}{
+bool {\bfseries set\-Standard\-Lifetime} (double new\-Lifetime)}
+\label{class_affective_state_a42be8cbd6088728f2d4995c405373204}
+
+\item 
+\hypertarget{class_affective_state_aac1d520a62c463f763060144ea2907b9}{
+bool {\bfseries set\-Base\-Intensity} (double new\-Intensity)}
+\label{class_affective_state_aac1d520a62c463f763060144ea2907b9}
+
+\item 
+\hypertarget{class_affective_state_a26df2365c23db0ecf640a06075a224b0}{
+double {\bfseries get\-Lifetime} ()}
+\label{class_affective_state_a26df2365c23db0ecf640a06075a224b0}
+
+\item 
+void \hyperlink{class_affective_state_ad0208fab4ea9bf577155c8aae932c96b}{set\-Decay\-Function} (\hyperlink{class_affective_state_aa47963a65353591a1e2109987ef624a1}{decay\-Function\-Enum} decay\-Func, double decay\-Param=0.\-0)
+\item 
+\hypertarget{class_affective_state_a9e2e8399228a86af59cdb7406aae9813}{
+int {\bfseries get\-Decay\-Function} ()}
+\label{class_affective_state_a9e2e8399228a86af59cdb7406aae9813}
+
+\item 
+std\-::vector$<$ \hyperlink{class_affect_vertex}{\-Affect\-Vertex} $\ast$ $>$ \hyperlink{class_affective_state_a3e447cea61d9d9dc7b758a68a4e8e009}{get\-Likelihood} ()
+\item 
+\hypertarget{class_affective_state_a4093ad8a30493c8f35d400b869a33968}{
+void \hyperlink{class_affective_state_a4093ad8a30493c8f35d400b869a33968}{set\-I\-D} (int idnew)}
+\label{class_affective_state_a4093ad8a30493c8f35d400b869a33968}
+
+\begin{DoxyCompactList}\small\item\em getter und setter for the \-I\-D \end{DoxyCompactList}\item 
+\hypertarget{class_affective_state_a22f046f76fb1c1176ec49b803da09b8f}{
+int {\bfseries get\-I\-D} () const }
+\label{class_affective_state_a22f046f76fb1c1176ec49b803da09b8f}
+
+\item 
+\hypertarget{class_affective_state_ab37b59269cf599a28e0cb2f8aa083e38}{
+const double {\bfseries get\-Intensity} () const }
+\label{class_affective_state_ab37b59269cf599a28e0cb2f8aa083e38}
+
+\item 
+\hypertarget{class_affective_state_a82b0f96a1494f5c58a6bec2840f3728a}{
+void \hyperlink{class_affective_state_a82b0f96a1494f5c58a6bec2840f3728a}{update} (float dt)}
+\label{class_affective_state_a82b0f96a1494f5c58a6bec2840f3728a}
+
+\begin{DoxyCompactList}\small\item\em \-Will update the intensity value according to the decay function und relative to the dt. \end{DoxyCompactList}\item 
+void \hyperlink{class_affective_state_a0c6f905934f6abe08a64d3b25fe88ff1}{set\-Emotion\-Container} (\hyperlink{class_emotion_dynamics}{\-Emotion\-Dynamics} $\ast$new\-Emo\-Con)
+\item 
+bool \hyperlink{class_affective_state_a913bce75bbf5bb870207e69fefb5efef}{set\-Likelihood} (float new\-Likelihood)
+\item 
+\hypertarget{class_affective_state_abe11a841bcd9979d183a946b476142d8}{
+void \hyperlink{class_affective_state_abe11a841bcd9979d183a946b476142d8}{dump} (std\-::ostream \&)}
+\label{class_affective_state_abe11a841bcd9979d183a946b476142d8}
+
+\begin{DoxyCompactList}\small\item\em \-Dump to stream for debugging. \end{DoxyCompactList}\item 
+void \hyperlink{class_affective_state_add666df993512c3af62ad1b6b00cab18}{update\-Likelihood} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{class_affective_state_ad46f24a9835b890cfe147ae0463d01bf}{type}
+\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{class_affective_state_a80a1bb184121a40c28c1d3ff103fd47f}{tokens}
+\item 
+\hypertarget{class_affective_state_a755c41239bc7777bfcc962a12768b27e}{
+\hyperlink{class_emotion_dynamics}{\-Emotion\-Dynamics} $\ast$ {\bfseries emo\-Con}}
+\label{class_affective_state_a755c41239bc7777bfcc962a12768b27e}
+
+\item 
+std\-::vector$<$ \hyperlink{class_affect_polygon}{\-Affect\-Polygon} $\ast$ $>$ \hyperlink{class_affective_state_ac2ea3391ebe5fd5708aecb2acdb7fe0d}{polygons}
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{class_affect_vertex}{\-Affect\-Vertex} $\ast$ $>$ \hyperlink{class_affective_state_a6529b00f1d62e79c8db2d09d756f011a}{update\-Likelihood} (std\-::vector$<$ int $>$ \-P\-A\-D)
+\item 
+bool \hyperlink{class_affective_state_a952cec059138bd392c5897a18ed3b6cd}{set\-Intensity} (double new\-Intensity)
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_affective_state_ae067f508a2053daf7541bf0901e38b67}{lifetime}
+\item 
+double \hyperlink{class_affective_state_a081f3fff485d06a746b1b472adf3160c}{standard\-Lifetime}
+\item 
+double \hyperlink{class_affective_state_a3ab3863056c40d2bd2910642d5565dc6}{base\-Intensity}
+\item 
+int \hyperlink{class_affective_state_a5db5a1c7f76aba385d216010bcc74509}{id}
+\item 
+\hypertarget{class_affective_state_a670e6974b030651725a83b379f233711}{
+\hyperlink{class_affective_state_aa47963a65353591a1e2109987ef624a1}{decay\-Function\-Enum} {\bfseries decay\-Function}}
+\label{class_affective_state_a670e6974b030651725a83b379f233711}
+
+\item 
+double \hyperlink{class_affective_state_a80ee188d27e7b36c94ac9c1f9ddb3cb7}{decay\-Parameter}
+\item 
+std\-::vector$<$ \hyperlink{class_affect_vertex}{\-Affect\-Vertex} $\ast$ $>$ \hyperlink{class_affective_state_a7dedd88cae5c125dfedaaf2eb48ae01f}{likelihoods}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-An \hyperlink{class_affective_state}{\-Affective\-State} is the base class of all \-Primary and \-Secondary emotions. 
+
+\-Definition at line 129 of file \-Affective\-State.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{class_affective_state_aa47963a65353591a1e2109987ef624a1}{
+\index{\-Affective\-State@{\-Affective\-State}!decay\-Function\-Enum@{decay\-Function\-Enum}}
+\index{decay\-Function\-Enum@{decay\-Function\-Enum}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{decay\-Function\-Enum}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Affective\-State\-::decay\-Function\-Enum}}}
+\label{class_affective_state_aa47963a65353591a1e2109987ef624a1}
+\-The following enumeration denotes the possible decay functions. \-D\-E\-F\-A\-U\-L\-T\-: \-N\-O\-N\-E 
+
+\-Definition at line 173 of file \-Affective\-State.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_affective_state_af7ac4f21de22c0ab43e3889458c61ff2}{
+\index{\-Affective\-State@{\-Affective\-State}!add\-Polygon@{add\-Polygon}}
+\index{add\-Polygon@{add\-Polygon}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{add\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Affective\-State\-::add\-Polygon (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf \-Affect\-Polygon} $\ast$ $>$}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{class_affective_state_af7ac4f21de22c0ab43e3889458c61ff2}
+\-Will be used to add a point, i.\-e. a polygon with only one vertex, a line, i.\-e. a polygon with only two vertices, or a polygon with (more than two) vertices lying all in the same plane (+/-\/ 100 \-D) to the existing \-P\-A\-D\-Values. 
+
+\-Definition at line 266 of file \-Affective\-State.\-cc.
+
+\hypertarget{class_affective_state_a3e447cea61d9d9dc7b758a68a4e8e009}{
+\index{\-Affective\-State@{\-Affective\-State}!get\-Likelihood@{get\-Likelihood}}
+\index{get\-Likelihood@{get\-Likelihood}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{get\-Likelihood}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf \-Affect\-Vertex} $\ast$ $>$ \-Affective\-State\-::get\-Likelihood (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_affective_state_a3e447cea61d9d9dc7b758a68a4e8e009}
+\-Without an argument given we try to use the \hyperlink{class_emotion_container}{\-Emotion\-Container} emo\-Con to get the \-P\-A\-D values of the \-Emotional\-Attendee.
+
+\-Calculate the likelihood of this \hyperlink{class_affective_state}{\-Affective\-State} with respect to the data in the \hyperlink{class_emotion_container}{\-Emotion\-Container} emo\-Con, if it is set. 
+
+\-Definition at line 184 of file \-Affective\-State.\-cc.
+
+\hypertarget{class_affective_state_ad0208fab4ea9bf577155c8aae932c96b}{
+\index{\-Affective\-State@{\-Affective\-State}!set\-Decay\-Function@{set\-Decay\-Function}}
+\index{set\-Decay\-Function@{set\-Decay\-Function}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{set\-Decay\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void \-Affective\-State\-::set\-Decay\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf decay\-Function\-Enum}}]{decay\-Func, }
+\item[{double}]{decay\-Param = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_affective_state_ad0208fab4ea9bf577155c8aae932c96b}
+\-To set a new decay function for the current emotion. \-We won't reset the intesity value here. 
+
+\-Definition at line 151 of file \-Affective\-State.\-cc.
+
+\hypertarget{class_affective_state_a0c6f905934f6abe08a64d3b25fe88ff1}{
+\index{\-Affective\-State@{\-Affective\-State}!set\-Emotion\-Container@{set\-Emotion\-Container}}
+\index{set\-Emotion\-Container@{set\-Emotion\-Container}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{set\-Emotion\-Container}]{\setlength{\rightskip}{0pt plus 5cm}void \-Affective\-State\-::set\-Emotion\-Container (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Emotion\-Dynamics} $\ast$}]{new\-Emo\-Con}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_affective_state_a0c6f905934f6abe08a64d3b25fe88ff1}
+\-Now we want to be able to set a reference to an emotion container emo\-Con such that we can easily use the \-Emotion\-Container's variables. 
+
+\-Definition at line 214 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_a952cec059138bd392c5897a18ed3b6cd}{
+\index{\-Affective\-State@{\-Affective\-State}!set\-Intensity@{set\-Intensity}}
+\index{set\-Intensity@{set\-Intensity}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{set\-Intensity}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Affective\-State\-::set\-Intensity (
+\begin{DoxyParamCaption}
+\item[{double}]{new\-Intensity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_affective_state_a952cec059138bd392c5897a18ed3b6cd}
+\-To set the intensity if it lies within \mbox{[}0.\-0, 1.\-0\mbox{]} returns success or failure 
+
+\-Definition at line 339 of file \-Affective\-State.\-cc.
+
+\hypertarget{class_affective_state_a3b824330921fc05fe7dd2f49eec150d2}{
+\index{\-Affective\-State@{\-Affective\-State}!set\-Lifetime@{set\-Lifetime}}
+\index{set\-Lifetime@{set\-Lifetime}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{set\-Lifetime}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Affective\-State\-::set\-Lifetime (
+\begin{DoxyParamCaption}
+\item[{double}]{new\-Lifetime}
+\end{DoxyParamCaption}
+)}}
+\label{class_affective_state_a3b824330921fc05fe7dd2f49eec150d2}
+\-This will set the new lifetime in seconds. \-We recalculate the decay\-Parameter to ensure the correct lifetime with respect to the dt value of the \hyperlink{class_emotion_container}{\-Emotion\-Container} emo\-Con-\/$>$dt. \-We will also reset the intensity value to 1.\-0! 
+
+\-Definition at line 105 of file \-Affective\-State.\-cc.
+
+\hypertarget{class_affective_state_ae03bf91dc1939016fcd45ceb60e7cbf5}{
+\index{\-Affective\-State@{\-Affective\-State}!set\-Lifetime@{set\-Lifetime}}
+\index{set\-Lifetime@{set\-Lifetime}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{set\-Lifetime}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Affective\-State\-::set\-Lifetime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_affective_state_ae03bf91dc1939016fcd45ceb60e7cbf5}
+\-For convenience we can call this function without parameter. \-The standard lifetime will be set. 
+
+\-Definition at line 159 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_a913bce75bbf5bb870207e69fefb5efef}{
+\index{\-Affective\-State@{\-Affective\-State}!set\-Likelihood@{set\-Likelihood}}
+\index{set\-Likelihood@{set\-Likelihood}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{set\-Likelihood}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Affective\-State\-::set\-Likelihood (
+\begin{DoxyParamCaption}
+\item[{float}]{new\-Likelihood}
+\end{DoxyParamCaption}
+)}}
+\label{class_affective_state_a913bce75bbf5bb870207e69fefb5efef}
+\-In case our \hyperlink{class_emotion_container}{\-Emotion\-Container} is set to \char`\"{}is\-Active == false\char`\"{} we might call this function to \-M\-A\-N\-U\-A\-L\-L\-Y set the likelihood. 
+
+\-Definition at line 377 of file \-Affective\-State.\-cc.
+
+\hypertarget{class_affective_state_add666df993512c3af62ad1b6b00cab18}{
+\index{\-Affective\-State@{\-Affective\-State}!update\-Likelihood@{update\-Likelihood}}
+\index{update\-Likelihood@{update\-Likelihood}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{update\-Likelihood}]{\setlength{\rightskip}{0pt plus 5cm}void \-Affective\-State\-::update\-Likelihood (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_affective_state_add666df993512c3af62ad1b6b00cab18}
+updating all likelihoods of this affective state. \-Should be called within \hyperlink{class_affective_state_a82b0f96a1494f5c58a6bec2840f3728a}{update(float dt)}.
+
+\-Calculate the likelihood of this \hyperlink{class_affective_state}{\-Affective\-State} with respect to the data in the \hyperlink{class_emotion_container}{\-Emotion\-Container} emo\-Con, if it is set. 
+
+\-Definition at line 166 of file \-Affective\-State.\-cc.
+
+\hypertarget{class_affective_state_a6529b00f1d62e79c8db2d09d756f011a}{
+\index{\-Affective\-State@{\-Affective\-State}!update\-Likelihood@{update\-Likelihood}}
+\index{update\-Likelihood@{update\-Likelihood}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{update\-Likelihood}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-Affect\-Vertex}$\ast$$>$ \-Affective\-State\-::update\-Likelihood (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ int $>$}]{\-P\-A\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_affective_state_a6529b00f1d62e79c8db2d09d756f011a}
+\-Will return the likelihood of the affective state to become aware. \-All the magic is to be done here\-: 1. \-We will calculate the distance between \-P\-A\-D and affective state's \-Polygons. 2. \-We take into account min/max\-\_\-distances to calculate activation. 3. likelihood(t) = activation(t) $\ast$ intensity(t) \-If we have several polygons in the vector, we have to take the best match in step 1, i.\-e. the one with the closest distance. \-If the affective state is represented as a polygon, we take the minimum distance to the \-P\-O\-L\-Y\-G\-O\-N instead of the \-P\-O\-I\-N\-T\-S. 
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_affective_state_a3ab3863056c40d2bd2910642d5565dc6}{
+\index{\-Affective\-State@{\-Affective\-State}!base\-Intensity@{base\-Intensity}}
+\index{base\-Intensity@{base\-Intensity}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{base\-Intensity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Affective\-State\-::base\-Intensity}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_affective_state_a3ab3863056c40d2bd2910642d5565dc6}
+\-This can be set at the beginning and will be used when lifetime == -\/1 \-D\-E\-F\-A\-U\-L\-T\-: 1.\-0 
+
+\-Definition at line 267 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_a80ee188d27e7b36c94ac9c1f9ddb3cb7}{
+\index{\-Affective\-State@{\-Affective\-State}!decay\-Parameter@{decay\-Parameter}}
+\index{decay\-Parameter@{decay\-Parameter}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{decay\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Affective\-State\-::decay\-Parameter}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_affective_state_a80ee188d27e7b36c94ac9c1f9ddb3cb7}
+\-A possible parameter for the decay functions. \-D\-E\-F\-A\-U\-L\-T\-: 1.\-0 
+
+\-Definition at line 279 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_a5db5a1c7f76aba385d216010bcc74509}{
+\index{\-Affective\-State@{\-Affective\-State}!id@{id}}
+\index{id@{id}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Affective\-State\-::id}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_affective_state_a5db5a1c7f76aba385d216010bcc74509}
+\-For backward compatibility we include an id being one of the \char`\"{}\-M\-O\-O\-D\-S\char`\"{} defined above \-D\-E\-F\-A\-U\-L\-T\-: \-M\-O\-O\-D\-\_\-\-N\-E\-U\-T\-R\-A\-L. 
+
+\-Definition at line 272 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_ae067f508a2053daf7541bf0901e38b67}{
+\index{\-Affective\-State@{\-Affective\-State}!lifetime@{lifetime}}
+\index{lifetime@{lifetime}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{lifetime}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Affective\-State\-::lifetime}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_affective_state_ae067f508a2053daf7541bf0901e38b67}
+\-Every affective state (primary or secondary) may have a \char`\"{}lifetime\char`\"{} now. \-Together with the decay function below, we can realize a context dependent turning on/off of esp. secondary emotions. \-A lifetime of \char`\"{}-\/1.\-0\char`\"{} is interpreted as \char`\"{}always on\char`\"{} and should be the \-D\-E\-F\-A\-U\-L\-T value. 
+
+\-Definition at line 257 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_a7dedd88cae5c125dfedaaf2eb48ae01f}{
+\index{\-Affective\-State@{\-Affective\-State}!likelihoods@{likelihoods}}
+\index{likelihoods@{likelihoods}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{likelihoods}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-Affect\-Vertex}$\ast$$>$ {\bf \-Affective\-State\-::likelihoods}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_affective_state_a7dedd88cae5c125dfedaaf2eb48ae01f}
+\-Keeping track of the \-Affective\-State's likelihood. \-Updated automatically within \hyperlink{class_affective_state_a82b0f96a1494f5c58a6bec2840f3728a}{update(float dt)}. 
+
+\-Definition at line 290 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_ac2ea3391ebe5fd5708aecb2acdb7fe0d}{
+\index{\-Affective\-State@{\-Affective\-State}!polygons@{polygons}}
+\index{polygons@{polygons}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{polygons}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf \-Affect\-Polygon}$\ast$$>$ {\bf \-Affective\-State\-::polygons}}}
+\label{class_affective_state_ac2ea3391ebe5fd5708aecb2acdb7fe0d}
+\-Vector of \-Affect\-Polygons \-Every primary as well as secondary emotion is to be represented in \-P\-A\-D \-Space \-D\-E\-F\-A\-U\-L\-T\-: empty vector. 
+
+\-Definition at line 221 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_a081f3fff485d06a746b1b472adf3160c}{
+\index{\-Affective\-State@{\-Affective\-State}!standard\-Lifetime@{standard\-Lifetime}}
+\index{standard\-Lifetime@{standard\-Lifetime}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{standard\-Lifetime}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Affective\-State\-::standard\-Lifetime}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_affective_state_a081f3fff485d06a746b1b472adf3160c}
+\-We might set a standard lifetime for every \-A\-S \-D\-E\-F\-A\-U\-L\-T\-: -\/1.\-0, i.\-e. always on 
+
+\-Definition at line 262 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_a80a1bb184121a40c28c1d3ff103fd47f}{
+\index{\-Affective\-State@{\-Affective\-State}!tokens@{tokens}}
+\index{tokens@{tokens}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{tokens}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ {\bf \-Affective\-State\-::tokens}}}
+\label{class_affective_state_a80a1bb184121a40c28c1d3ff103fd47f}
+\-This might be a list of tokens \-D\-E\-F\-A\-U\-L\-T\-: empty 
+
+\-Definition at line 209 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affective_state_ad46f24a9835b890cfe147ae0463d01bf}{
+\index{\-Affective\-State@{\-Affective\-State}!type@{type}}
+\index{type@{type}!AffectiveState@{\-Affective\-State}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-Affective\-State\-::type}}}
+\label{class_affective_state_ad46f24a9835b890cfe147ae0463d01bf}
+\-This will be the \-O\-C\-C / \-Scherer / \-Becker string denoting the type or class of emotion \-D\-E\-F\-A\-U\-L\-T\-: undefined 
+
+\-Definition at line 204 of file \-Affective\-State.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\-Affective\-State.\-h\item 
+\-Affective\-State.\-cc\end{DoxyCompactItemize}

@@ -1,0 +1,105 @@
+\hypertarget{class_affect_polygon}{
+\section{\-Affect\-Polygon \-Class \-Reference}
+\label{class_affect_polygon}\index{\-Affect\-Polygon@{\-Affect\-Polygon}}
+}
+
+
+{\ttfamily \#include $<$\-Affective\-State.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_affect_polygon_a364e906c60057bc9a6264221ba52b1bf}{
+{\bfseries \-Affect\-Polygon} (std\-::vector$<$ \hyperlink{class_affect_vertex}{\-Affect\-Vertex} $\ast$ $>$, std\-::string \hyperlink{class_affect_polygon_aea731a4d326a3095686b529030266188}{gl\-Mode}=\char`\"{}\-G\-L\-\_\-\-P\-O\-I\-N\-T\-S\char`\"{})}
+\label{class_affect_polygon_a364e906c60057bc9a6264221ba52b1bf}
+
+\item 
+\hypertarget{class_affect_polygon_adee033730c99195b8c6261a9530f86b4}{
+{\bfseries \-Affect\-Polygon} (\hyperlink{class_affect_vertex}{\-Affect\-Vertex} $\ast$)}
+\label{class_affect_polygon_adee033730c99195b8c6261a9530f86b4}
+
+\item 
+bool \hyperlink{class_affect_polygon_a8483a6d1e2f22bd6d975aad7521c3761}{valid} ()
+\item 
+\hypertarget{class_affect_polygon_a7af2c3c08a837bff793e6be83c81b81c}{
+void \hyperlink{class_affect_polygon_a7af2c3c08a837bff793e6be83c81b81c}{add\-Vertices} (std\-::vector$<$ \hyperlink{class_affect_vertex}{\-Affect\-Vertex} $\ast$ $>$)}
+\label{class_affect_polygon_a7af2c3c08a837bff793e6be83c81b81c}
+
+\begin{DoxyCompactList}\small\item\em \-To add vertices to the polygon. \end{DoxyCompactList}\item 
+\hypertarget{class_affect_polygon_a034a7b375339e53b42ebf25d94c0a76c}{
+float {\bfseries get\-Intensity} (int p, int a, int d)}
+\label{class_affect_polygon_a034a7b375339e53b42ebf25d94c0a76c}
+
+\item 
+\hypertarget{class_affect_polygon_a6ee97313e0d1f4199e275579142d8ea5}{
+std\-::vector$<$ float $>$ {\bfseries linear\-Interpolation} (\hyperlink{class_affect_vertex}{\-Affect\-Vertex} const \&v1, \hyperlink{class_affect_vertex}{\-Affect\-Vertex} const \&v2, int coord\mbox{[}$\,$\mbox{]})}
+\label{class_affect_polygon_a6ee97313e0d1f4199e275579142d8ea5}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_affect_polygon_a9184c5ecb96030b1b20d9f1b856f3c40}{
+std\-::vector$<$ \hyperlink{class_affect_vertex}{\-Affect\-Vertex} $\ast$ $>$ {\bfseries vertices}}
+\label{class_affect_polygon_a9184c5ecb96030b1b20d9f1b856f3c40}
+
+\item 
+float \hyperlink{class_affect_polygon_abc171095a4d763dbf133ac8d3c5faa27}{min\-\_\-distance}
+\item 
+\hypertarget{class_affect_polygon_a2f4af25cbbb2d4ab36fe3d3dd71b678b}{
+float {\bfseries max\-\_\-distance}}
+\label{class_affect_polygon_a2f4af25cbbb2d4ab36fe3d3dd71b678b}
+
+\item 
+std\-::string \hyperlink{class_affect_polygon_aea731a4d326a3095686b529030266188}{gl\-Mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{class_affect_polygon}{\-Affect\-Polygon} used for representation of an \hyperlink{class_affective_state}{\-Affective\-State} in \-P\-A\-D-\/space. \-Uses \-Affect\-Vertices as described above. 
+
+\-Definition at line 85 of file \-Affective\-State.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_affect_polygon_a8483a6d1e2f22bd6d975aad7521c3761}{
+\index{\-Affect\-Polygon@{\-Affect\-Polygon}!valid@{valid}}
+\index{valid@{valid}!AffectPolygon@{\-Affect\-Polygon}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Affect\-Polygon\-::valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_affect_polygon_a8483a6d1e2f22bd6d975aad7521c3761}
+\-Tests the polygon for validity, i.\-e. if all \-D-\/values lie in the same plane. 
+
+\-Definition at line 496 of file \-Affective\-State.\-cc.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_affect_polygon_aea731a4d326a3095686b529030266188}{
+\index{\-Affect\-Polygon@{\-Affect\-Polygon}!gl\-Mode@{gl\-Mode}}
+\index{gl\-Mode@{gl\-Mode}!AffectPolygon@{\-Affect\-Polygon}}
+\subsubsection[{gl\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf \-Affect\-Polygon\-::gl\-Mode}}}
+\label{class_affect_polygon_aea731a4d326a3095686b529030266188}
+get the \-G\-L\-\_\-\-M\-O\-D\-E \-D\-E\-F\-A\-U\-L\-T\-: \-G\-L\-\_\-\-P\-O\-I\-N\-T 
+
+\-Definition at line 115 of file \-Affective\-State.\-h.
+
+\hypertarget{class_affect_polygon_abc171095a4d763dbf133ac8d3c5faa27}{
+\index{\-Affect\-Polygon@{\-Affect\-Polygon}!min\-\_\-distance@{min\-\_\-distance}}
+\index{min\-\_\-distance@{min\-\_\-distance}!AffectPolygon@{\-Affect\-Polygon}}
+\subsubsection[{min\-\_\-distance}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf \-Affect\-Polygon\-::min\-\_\-distance}}}
+\label{class_affect_polygon_abc171095a4d763dbf133ac8d3c5faa27}
+min\-\_\-distance and max\-\_\-distance are now substituting the activation and saturation thresholds of the original implementation of 2003 \-D\-E\-F\-A\-L\-U\-T\-S\-: min\-\_\-distance = outer\-Radius = 0.\-64, max\-\_\-distance = inner\-Radius = 0.\-2 
+
+\-Definition at line 108 of file \-Affective\-State.\-h.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\-Affective\-State.\-h\item 
+\-Affective\-State.\-cc\end{DoxyCompactItemize}

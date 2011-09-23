@@ -1,0 +1,350 @@
+\hypertarget{class_emotion_dynamics}{
+\section{\-Emotion\-Dynamics \-Class \-Reference}
+\label{class_emotion_dynamics}\index{\-Emotion\-Dynamics@{\-Emotion\-Dynamics}}
+}
+
+
+{\ttfamily \#include $<$\-Emotion\-Dynamics.\-h$>$}
+
+\-Inheritance diagram for \-Emotion\-Dynamics\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_emotion_dynamics}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_emotion_dynamics_a68538ace62b52fcde2d6bc82279dff2d}{$\sim$\-Emotion\-Dynamics} ()
+\item 
+\hyperlink{class_emotion_dynamics_a836a77ceb1e0590ec148e6739613e960}{\-Emotion\-Dynamics} (const \hyperlink{class_emotion_dynamics}{\-Emotion\-Dynamics} \&emo\-Con)
+\item 
+virtual void \hyperlink{class_emotion_dynamics_a806fec22c1590ea3df5037bf3922a7b6}{update} (float dt)
+\item 
+void \hyperlink{class_emotion_dynamics_afd7e47e31ed473b8f16eca21dab04ded}{update} ()
+\item 
+\hypertarget{class_emotion_dynamics_a156b80db18d99fac37a07b3602c78d46}{
+virtual void {\bfseries init} ()}
+\label{class_emotion_dynamics_a156b80db18d99fac37a07b3602c78d46}
+
+\item 
+\hypertarget{class_emotion_dynamics_a1b034a59d826ef20bac239557b836714}{
+bool {\bfseries init\-Emo\-Dyn} ()}
+\label{class_emotion_dynamics_a1b034a59d826ef20bac239557b836714}
+
+\item 
+\hypertarget{class_emotion_dynamics_a8b3b6aff43f434945d91b38d1ba24c05}{
+bool {\bfseries init\-Emo\-P\-A\-D} ()}
+\label{class_emotion_dynamics_a8b3b6aff43f434945d91b38d1ba24c05}
+
+\item 
+\hypertarget{class_emotion_dynamics_a862799db63e63af7b97f0a8095fecea9}{
+virtual void {\bfseries write\-Transferable} (std\-::ostream \&ostr) const }
+\label{class_emotion_dynamics_a862799db63e63af7b97f0a8095fecea9}
+
+\item 
+\hypertarget{class_emotion_dynamics_ab5a71869fe76988e63567d8da1ebbb0d}{
+virtual void {\bfseries read\-Transferable} (std\-::istream \&)}
+\label{class_emotion_dynamics_ab5a71869fe76988e63567d8da1ebbb0d}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_emotion_dynamics_a785aa6925251548729a83d13cf33cfaa}{
+std\-::string {\bfseries dyn\-Filename}}
+\label{class_emotion_dynamics_a785aa6925251548729a83d13cf33cfaa}
+
+\item 
+\hypertarget{class_emotion_dynamics_a609f12ad220dd954278e9c229caff863}{
+std\-::string {\bfseries pad\-Filename}}
+\label{class_emotion_dynamics_a609f12ad220dd954278e9c229caff863}
+
+\item 
+\hypertarget{class_emotion_dynamics_a468bde5060ab501eac7766f8c8af237b}{
+int {\bfseries spon\-\_\-target}}
+\label{class_emotion_dynamics_a468bde5060ab501eac7766f8c8af237b}
+
+\item 
+\hypertarget{class_emotion_dynamics_a6f437f85dbb70ef001042290adeb2bcc}{
+int {\bfseries prev\-\_\-target}}
+\label{class_emotion_dynamics_a6f437f85dbb70ef001042290adeb2bcc}
+
+\item 
+\hypertarget{class_emotion_dynamics_a137fb40b93d6fbc83306ba46f1e86bb5}{
+int {\bfseries dom\-\_\-target}}
+\label{class_emotion_dynamics_a137fb40b93d6fbc83306ba46f1e86bb5}
+
+\item 
+\hypertarget{class_emotion_dynamics_a8022ce5df1dee1d1c82f2118620c5e77}{
+double {\bfseries mass}}
+\label{class_emotion_dynamics_a8022ce5df1dee1d1c82f2118620c5e77}
+
+\item 
+\hypertarget{class_emotion_dynamics_a3cde6fcb41a079c1ec589a864b1756da}{
+double {\bfseries sxlast}}
+\label{class_emotion_dynamics_a3cde6fcb41a079c1ec589a864b1756da}
+
+\item 
+\hypertarget{class_emotion_dynamics_a178bc78f21560e73099f442b110ac72a}{
+double {\bfseries sylast}}
+\label{class_emotion_dynamics_a178bc78f21560e73099f442b110ac72a}
+
+\item 
+\hypertarget{class_emotion_dynamics_ab343e535c5040bd196d16d7a7208466f}{
+double {\bfseries sxt}}
+\label{class_emotion_dynamics_ab343e535c5040bd196d16d7a7208466f}
+
+\item 
+\hypertarget{class_emotion_dynamics_ae5e489a52ca972a89cfcef3f7560eecd}{
+double {\bfseries syt}}
+\label{class_emotion_dynamics_ae5e489a52ca972a89cfcef3f7560eecd}
+
+\item 
+\hypertarget{class_emotion_dynamics_a3f83131653bbcb3cc7d33e275d0e68fc}{
+double {\bfseries sdom}}
+\label{class_emotion_dynamics_a3f83131653bbcb3cc7d33e275d0e68fc}
+
+\item 
+\hypertarget{class_emotion_dynamics_afcf2988c58857bf4097203862fea7147}{
+double {\bfseries sdomlast}}
+\label{class_emotion_dynamics_afcf2988c58857bf4097203862fea7147}
+
+\item 
+\hypertarget{class_emotion_dynamics_aa105dfb370d4d61c9f5d1541585ddde0}{
+double {\bfseries vxlast}}
+\label{class_emotion_dynamics_aa105dfb370d4d61c9f5d1541585ddde0}
+
+\item 
+\hypertarget{class_emotion_dynamics_a91be7910f8de0b8d547fcd9108b0efdc}{
+double {\bfseries vylast}}
+\label{class_emotion_dynamics_a91be7910f8de0b8d547fcd9108b0efdc}
+
+\item 
+\hypertarget{class_emotion_dynamics_aad3f84224f9ed8090c685726b998fd72}{
+double {\bfseries vxt}}
+\label{class_emotion_dynamics_aad3f84224f9ed8090c685726b998fd72}
+
+\item 
+\hypertarget{class_emotion_dynamics_ab79fa9eb9528136f6f8e1841efb44f75}{
+double {\bfseries vyt}}
+\label{class_emotion_dynamics_ab79fa9eb9528136f6f8e1841efb44f75}
+
+\item 
+\hypertarget{class_emotion_dynamics_a0291d5b3750e65b8f3c2fae1d496aaaf}{
+double {\bfseries vdom}}
+\label{class_emotion_dynamics_a0291d5b3750e65b8f3c2fae1d496aaaf}
+
+\item 
+\hypertarget{class_emotion_dynamics_a7422bc00f622ff8a8ee2d4540660bda7}{
+double {\bfseries vdomlast}}
+\label{class_emotion_dynamics_a7422bc00f622ff8a8ee2d4540660bda7}
+
+\item 
+\hypertarget{class_emotion_dynamics_a50315c4ed074e5aa05602b407b567a90}{
+double {\bfseries axlast}}
+\label{class_emotion_dynamics_a50315c4ed074e5aa05602b407b567a90}
+
+\item 
+\hypertarget{class_emotion_dynamics_af0ce936165f587e37425cc482efc33fd}{
+double {\bfseries aylast}}
+\label{class_emotion_dynamics_af0ce936165f587e37425cc482efc33fd}
+
+\item 
+\hypertarget{class_emotion_dynamics_a4914dbeaca6882719942ba95a3d4fdb7}{
+double {\bfseries axt}}
+\label{class_emotion_dynamics_a4914dbeaca6882719942ba95a3d4fdb7}
+
+\item 
+\hypertarget{class_emotion_dynamics_a29f2a61cfd95c3395e811980b00d36d1}{
+double {\bfseries ayt}}
+\label{class_emotion_dynamics_a29f2a61cfd95c3395e811980b00d36d1}
+
+\item 
+\hypertarget{class_emotion_dynamics_a362ca6d7dc604be1d7dd8d09f7e3f61b}{
+double {\bfseries adom}}
+\label{class_emotion_dynamics_a362ca6d7dc604be1d7dd8d09f7e3f61b}
+
+\item 
+\hypertarget{class_emotion_dynamics_a7b8378fd5de2cd38498f0e0ed0d1f4bb}{
+double {\bfseries adomlast}}
+\label{class_emotion_dynamics_a7b8378fd5de2cd38498f0e0ed0d1f4bb}
+
+\item 
+\hypertarget{class_emotion_dynamics_ab3ad74329483a05c82f5dd837e5761fe}{
+double {\bfseries z}}
+\label{class_emotion_dynamics_ab3ad74329483a05c82f5dd837e5761fe}
+
+\item 
+\hypertarget{class_emotion_dynamics_a315aebaa8e927183734cec16966af8cb}{
+bool {\bfseries x\-Sign\-Change}}
+\label{class_emotion_dynamics_a315aebaa8e927183734cec16966af8cb}
+
+\item 
+\hypertarget{class_emotion_dynamics_a9ef0cad8e968f60c000a287b57dc85b5}{
+bool {\bfseries y\-Sign\-Change}}
+\label{class_emotion_dynamics_a9ef0cad8e968f60c000a287b57dc85b5}
+
+\item 
+\hypertarget{class_emotion_dynamics_a58e6db5700a9d3fd0c616e12e2a4a0d1}{
+int {\bfseries x\-Sign}}
+\label{class_emotion_dynamics_a58e6db5700a9d3fd0c616e12e2a4a0d1}
+
+\item 
+\hypertarget{class_emotion_dynamics_a6730f7847ceda83a39164e1d75c49906}{
+int {\bfseries y\-Sign}}
+\label{class_emotion_dynamics_a6730f7847ceda83a39164e1d75c49906}
+
+\item 
+\hypertarget{class_emotion_dynamics_a9b5768aa0f49fa87ca6885634ffa73c3}{
+\hyperlink{class_emo_pos2_reach}{\-Emo\-Pos2\-Reach} $\ast$ {\bfseries positions2\-Reach}}
+\label{class_emotion_dynamics_a9b5768aa0f49fa87ca6885634ffa73c3}
+
+\item 
+\hypertarget{class_emotion_dynamics_a775cf992332ff49c0fb8cabd1643fe5b}{
+int {\bfseries x\-Tens}}
+\label{class_emotion_dynamics_a775cf992332ff49c0fb8cabd1643fe5b}
+
+\item 
+\hypertarget{class_emotion_dynamics_ac432577cfd7bb4b3e556ade2a5ac435a}{
+int {\bfseries y\-Tens}}
+\label{class_emotion_dynamics_ac432577cfd7bb4b3e556ade2a5ac435a}
+
+\item 
+\hypertarget{class_emotion_dynamics_af9577f55643cc20ea444803bd282aa1e}{
+int {\bfseries slope}}
+\label{class_emotion_dynamics_af9577f55643cc20ea444803bd282aa1e}
+
+\item 
+\hypertarget{class_emotion_dynamics_ae49c90d9fdf4eba4854773c0acc382d0}{
+int {\bfseries x\-Reg}}
+\label{class_emotion_dynamics_ae49c90d9fdf4eba4854773c0acc382d0}
+
+\item 
+\hypertarget{class_emotion_dynamics_ad283e4f8cc06edb85cf2a43f29a006fc}{
+int {\bfseries y\-Reg}}
+\label{class_emotion_dynamics_ad283e4f8cc06edb85cf2a43f29a006fc}
+
+\item 
+\hypertarget{class_emotion_dynamics_ad6b40429659516e168aa33ebb6c116b1}{
+int {\bfseries boredom}}
+\label{class_emotion_dynamics_ad6b40429659516e168aa33ebb6c116b1}
+
+\item 
+\hypertarget{class_emotion_dynamics_accb6a1b571b75ed144754c38165dc102}{
+int {\bfseries mean}}
+\label{class_emotion_dynamics_accb6a1b571b75ed144754c38165dc102}
+
+\item 
+\hypertarget{class_emotion_dynamics_a4454cece93b0e0d32dfbced9a0490926}{
+float {\bfseries last\-Update}}
+\label{class_emotion_dynamics_a4454cece93b0e0d32dfbced9a0490926}
+
+\item 
+\hypertarget{class_emotion_dynamics_a55320fb65b8174096af3415d093fc6f9}{
+int {\bfseries x\-Pos}}
+\label{class_emotion_dynamics_a55320fb65b8174096af3415d093fc6f9}
+
+\item 
+\hypertarget{class_emotion_dynamics_adabc8203c0a55205eaed8722816e993a}{
+int {\bfseries y\-Pos}}
+\label{class_emotion_dynamics_adabc8203c0a55205eaed8722816e993a}
+
+\item 
+\hypertarget{class_emotion_dynamics_a555a8bb2c434a2245e5d7cae575aa9bb}{
+int {\bfseries z\-Pos}}
+\label{class_emotion_dynamics_a555a8bb2c434a2245e5d7cae575aa9bb}
+
+\item 
+\hypertarget{class_emotion_dynamics_a4e5c5b303ec5bff429fcaa9b8f9ac9c5}{
+int {\bfseries p\-Value}}
+\label{class_emotion_dynamics_a4e5c5b303ec5bff429fcaa9b8f9ac9c5}
+
+\item 
+\hypertarget{class_emotion_dynamics_a52a013b50284ba08c12d30ccc9b35b5d}{
+int {\bfseries a\-Value}}
+\label{class_emotion_dynamics_a52a013b50284ba08c12d30ccc9b35b5d}
+
+\item 
+\hypertarget{class_emotion_dynamics_ad12dad0868568048b1fb973210dbaa58}{
+int {\bfseries d\-Value}}
+\label{class_emotion_dynamics_ad12dad0868568048b1fb973210dbaa58}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This class implements the emotion dynamics. \-It is derived from \hyperlink{class_emotion_container}{\-Emotion\-Container} and reimplements the update-\/function 
+
+\-Definition at line 37 of file \-Emotion\-Dynamics.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{class_emotion_dynamics_a68538ace62b52fcde2d6bc82279dff2d}{
+\index{\-Emotion\-Dynamics@{\-Emotion\-Dynamics}!$\sim$\-Emotion\-Dynamics@{$\sim$\-Emotion\-Dynamics}}
+\index{$\sim$\-Emotion\-Dynamics@{$\sim$\-Emotion\-Dynamics}!EmotionDynamics@{\-Emotion\-Dynamics}}
+\subsubsection[{$\sim$\-Emotion\-Dynamics}]{\setlength{\rightskip}{0pt plus 5cm}\-Emotion\-Dynamics\-::$\sim$\-Emotion\-Dynamics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_emotion_dynamics_a68538ace62b52fcde2d6bc82279dff2d}
+\-Deleting positions2\-Reach 
+
+\-Definition at line 66 of file \-Emotion\-Dynamics.\-cc.
+
+\hypertarget{class_emotion_dynamics_a836a77ceb1e0590ec148e6739613e960}{
+\index{\-Emotion\-Dynamics@{\-Emotion\-Dynamics}!\-Emotion\-Dynamics@{\-Emotion\-Dynamics}}
+\index{\-Emotion\-Dynamics@{\-Emotion\-Dynamics}!EmotionDynamics@{\-Emotion\-Dynamics}}
+\subsubsection[{\-Emotion\-Dynamics}]{\setlength{\rightskip}{0pt plus 5cm}\-Emotion\-Dynamics\-::\-Emotion\-Dynamics (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Emotion\-Dynamics} \&}]{emo\-Con}
+\end{DoxyParamCaption}
+)}}
+\label{class_emotion_dynamics_a836a77ceb1e0590ec148e6739613e960}
+\-Simple \-Copy \-Constructor 
+
+\-Definition at line 75 of file \-Emotion\-Dynamics.\-cc.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_emotion_dynamics_a806fec22c1590ea3df5037bf3922a7b6}{
+\index{\-Emotion\-Dynamics@{\-Emotion\-Dynamics}!update@{update}}
+\index{update@{update}!EmotionDynamics@{\-Emotion\-Dynamics}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void \-Emotion\-Dynamics\-::update (
+\begin{DoxyParamCaption}
+\item[{float}]{\-\_\-dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_emotion_dynamics_a806fec22c1590ea3df5037bf3922a7b6}
+\-Physics calculation for x-\/value (emotion) as described in \-Ph\-D thesis.
+
+\-In addition, the y-\/value (mood) is calculated as follows\-: \-By means of \hyperlink{class_emo_pos2_reach}{\-Emo\-Pos2\-Reach} contained in \hyperlink{class_emotion_container}{\-Emotion\-Container}, of which this class is a subclass, an integer y\-Pos2\-Reach is being managed as well as a boolean, which can be checked using \-Emo\-Pos2\-Reach-\/$>$get\-Y\-Valid(). \-If this returns true, the achor point of the spiral spring for y is temporarily attached to the y\-Pos2\-Reach value (indicated by a blue circle in \-P\-A\-D space). \-Consequently, a force is applied to the reference point, by which it is driven towards y\-Pos2\-Reach. \-After reaching it, the forces are reset to zero and y\-Pos2\-Reach-\/$>$set\-Valid(false) executed. \-The y coordinate is, thus, again driven back to 0 over time. 
+
+\-Reimplemented from \hyperlink{class_emotion_container_a8c63f4c9e9c558b4cecdf1aab9c81bd0}{\-Emotion\-Container}.
+
+
+
+\-Definition at line 142 of file \-Emotion\-Dynamics.\-cc.
+
+\hypertarget{class_emotion_dynamics_afd7e47e31ed473b8f16eca21dab04ded}{
+\index{\-Emotion\-Dynamics@{\-Emotion\-Dynamics}!update@{update}}
+\index{update@{update}!EmotionDynamics@{\-Emotion\-Dynamics}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void \-Emotion\-Dynamics\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_emotion_dynamics_afd7e47e31ed473b8f16eca21dab04ded}
+\-If we dont get a dt value, we use our internal dt 
+
+\-Definition at line 123 of file \-Emotion\-Dynamics.\-cc.
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\-Emotion\-Dynamics.\-h\item 
+\-Emotion\-Dynamics.\-cc\end{DoxyCompactItemize}
