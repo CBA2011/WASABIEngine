@@ -223,7 +223,7 @@ EmotionContainer::readTransferable(std::istream &istr)
             while (token != "atlmmap_end") {
                 string type = token;
                 vector<float> float_vec;
-                while (istr.good() && (doubleValue > 0 || doubleValue < 0.0)) {
+                while (istr.good() && (doubleValue != 0.0)) {
                     istr >> token;
                     std::stringstream sstr(token);
                     // 	  if (!(istr >> token)) {
@@ -237,7 +237,7 @@ EmotionContainer::readTransferable(std::istream &istr)
                     // BUG: If MOOD_ID == 0 we have a problem here!
                     // Might never occur as 0 means MOOD_NEUTRAL
                     // DEFAULT value is -1!
-                    if (doubleValue > 0.0 || doubleValue < 0.0 ){
+                    if (doubleValue != 0.0){
                         float_vec.push_back(doubleValue);
                     }
                 }

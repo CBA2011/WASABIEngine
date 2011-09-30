@@ -263,6 +263,7 @@ EmotionDynamics::update(float _dt) {
 void
 EmotionDynamics::writeTransferable(std::ostream &ostr) const
 {
+
     EmotionContainer::writeTransferable(ostr);
     ostr << " " << xPos << " " << yPos << " " << zPos
          << " " << xTens << " " << yTens << " " << slope

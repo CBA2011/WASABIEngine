@@ -32,10 +32,11 @@
 class WASABIENGINESHARED_EXPORT WASABIEngine {
 private:
     // the number of IDs also shows the number of Attendees, because the IDs start from 1 here.
-    static int nextID;
-    static int getNextID(){nextID++; return nextID;}
-    int MaxSimulations;
+    int nextID;
+    int getNextID();
+
 public:
+    int MaxSimulations;
     WASABIEngine();
     WASABIEngine(std::string emotionclass = "primary");
     virtual ~WASABIEngine();
@@ -64,7 +65,7 @@ public:
     bool setFactor(int value, int uid = 1);
     void setMaxSimulations(int max);
     //returns the localID
-    int addEmotionalAttendee(std::string name, std::string globalID = "undef", std::string initFilename = "init");
+    int addEmotionalAttendee(std::string name, std::string globalID = "undef");
 };
 
 

@@ -36,7 +36,7 @@ class WASABIENGINESHARED_EXPORT cogaEmotionalAttendee: public cogaAttendee
 
 public:
 
-    cogaEmotionalAttendee(int ID = 0);
+    cogaEmotionalAttendee();
     ~cogaEmotionalAttendee();
     //int pers_xPos, pers_yPos, pers_zPos, pers_dominance, pers_PValue, pers_AValue, pers_DValue;
     std::string PADstring, PADstring_last;

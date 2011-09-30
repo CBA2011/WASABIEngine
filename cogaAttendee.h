@@ -32,8 +32,7 @@
 class WASABIENGINESHARED_EXPORT cogaAttendee{
 
 public:
-
-    cogaAttendee(int ID = 0);
+    cogaAttendee();
     virtual ~cogaAttendee();
     virtual void setName(std::string name) = 0;
     virtual std::string getName() {return _name;}
@@ -45,5 +44,6 @@ protected:
     std::string _name;
     int localID;
     std::string globalID;
+    static int globalCount;
 };
 #endif
