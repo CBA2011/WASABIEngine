@@ -193,7 +193,7 @@ public :
     void setID(int idnew) { if (idnew <= MOOD_MAX && idnew > 0) id = idnew; else std::cout << "AffectiveState::setID: " << idnew << " out of range!" << std::endl;}
     int getID() const {return id;}
 
-    const double getIntensity() const {return intensity;}
+    double getIntensity() const {return intensity;}
 
     /// Will update the intensity value according to the decay function und relative to the dt
     void update(float dt);

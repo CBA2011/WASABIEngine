@@ -29,7 +29,8 @@
 #include <sstream>
 using namespace std;
 
-cogaEmotionalAttendee::cogaEmotionalAttendee(int id)
+cogaEmotionalAttendee::cogaEmotionalAttendee()
+    : cogaAttendee()
 {
     //pers_xPos = pers_yPos = pers_zPos = 0;
     //pers_PValue = pers_AValue = pers_DValue = 0;
@@ -40,7 +41,6 @@ cogaEmotionalAttendee::cogaEmotionalAttendee(int id)
     //EmoConPerson->setUID(_name);
     //EmoConPerson->uid_protected = false;
     PADconverter = new EmotionConverterPAD();
-    localID = id;
     simulationOn = true;
 }
 
@@ -54,9 +54,6 @@ void
 cogaEmotionalAttendee::setName(std::string name)
 {
     _name = name;
-    //EmoConPerson->uid_protected = false;
-    //EmoConPerson->setUID(_name);
-    //EmoConPerson->uid_protected = true;
 }
 
 void cogaEmotionalAttendee::setGlobalID(std::string newGlobalID)

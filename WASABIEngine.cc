@@ -25,8 +25,6 @@
 
 #include "WASABIEngine.h"
 
-int WASABIEngine::nextID = 0;
-
 WASABIEngine::WASABIEngine(std::string emotionClass) {
     Class = "primary";
     if (emotionClass == "primary" || emotionClass == "secondary"){
@@ -49,25 +47,10 @@ WASABIEngine::~WASABIEngine() {
 void
 WASABIEngine::initClass(){
     MaxSimulations = 10;
+    nextID = 1;
     //ownEmoAttendee = new cogaEmotionalAttendee(getNextID());
     //emoAttendees.push_back(ownEmoAttendee);
 }
-
-/*
-bool
-WASABIEngine::loadAffectiveStates(std::string filebasename, int uid) {
- cogaEmotionalAttendee* ea = getEAfromID(uid);
- if (!ea){
-  std::cout << "WASABIEngine::loadAffectiveStates: uid " << uid << " not found!" << std::endl;
-  return false;
- }
- if (ea->EmoConPerson->loadAffectiveStates(filebasename + ".emo_dyn","emo_dyn") &&
-   ea->EmoConPerson->loadAffectiveStates(filebasename + ".emo_pad","emo_pad")){
-  return true;
- }
- return false;
-}
-*/
 
 bool
 WASABIEngine::update() {
@@ -251,14 +234,14 @@ WASABIEngine::setFactor(int value, int uid) {
 }
 
 int
-WASABIEngine::addEmotionalAttendee(std::string name, std::string globalID, std::string initFilename) {
+WASABIEngine::addEmotionalAttendee(std::string name, std::string globalID) {
     std::cout << "WASABIEngine::addAttendee: requested to ADD '" << name << "' with globalID '" << globalID << "'.." << std::endl;
-    int nextID = getNextID();
-    if (nextID > MaxSimulations){
+    int nID = getNextID();
+    if (nID == 0){
         std::cout << "WASABIEngine::addEmotionalAttendee: ERROR maximum number of simulations (" << MaxSimulations << ") reached!" << std::endl;
         return 0;
     }
-    cogaEmotionalAttendee* newEA = new cogaEmotionalAttendee(nextID);
+    cogaEmotionalAttendee* newEA = new cogaEmotionalAttendee();
     newEA->setName(name);
     newEA->setGlobalID(globalID);
     emoAttendees.push_back(newEA);
@@ -288,5 +271,15 @@ void
 WASABIEngine::setMaxSimulations(int max){
     if (max > 0 && max < 50) {
         MaxSimulations = max;
+        std::cout << "MaxSimulations set to " << MaxSimulations << std::endl;
     }
+}
+
+int
+WASABIEngine::getNextID() {
+    if (nextID < MaxSimulations) {
+        nextID++;
+        return nextID;
+    }
+    return 0; //i.e. failure code
 }
