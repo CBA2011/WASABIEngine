@@ -73,9 +73,10 @@ public:
     void setName(std::string name);
     void setGlobalID(std::string newGlobalID);
     void updatePADstring();
-    void doMapping();
     bool update();
     void resetForces();
     bool simulationOn;
+private:
+    void doMapping();
 };
 #endif
