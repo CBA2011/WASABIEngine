@@ -27,6 +27,7 @@
 #include "EmotionContainer.h"
 #include <iostream>
 #include <sstream>
+
 using namespace std;
 
 cogaEmotionalAttendee::cogaEmotionalAttendee()
@@ -42,6 +43,9 @@ cogaEmotionalAttendee::cogaEmotionalAttendee()
     //EmoConPerson->uid_protected = false;
     PADconverter = new EmotionConverterPAD();
     simulationOn = true;
+    //EXTENSION1:
+    resetBuffer();
+    //END OF EXTENSION1
 }
 
 cogaEmotionalAttendee::~cogaEmotionalAttendee()
@@ -341,6 +345,12 @@ cogaEmotionalAttendee::update()
     EmoConPerson->update();
     updatePADstring();
     doMapping();
+    //EXTENSION3:
+    if (PADBufferCounter >= 500){
+        resetBuffer();
+    }
+    updateBuffer();
+    //END OF EXTENSION3
     return true;
 }
 
@@ -353,3 +363,78 @@ cogaEmotionalAttendee::resetForces() {
     EmoConPerson->vxt = EmoConPerson->vxlast = EmoConPerson->axt = EmoConPerson->axlast = 0;
     EmoConPerson->vyt = EmoConPerson->vylast = EmoConPerson->ayt = EmoConPerson->aylast = 0;
 }
+//EXTENSION4:
+void
+cogaEmotionalAttendee::resetBuffer() {
+    PBuffer = ABuffer = DBuffer = "";
+    PADBufferCounter = 0;
+}
+
+void
+cogaEmotionalAttendee::updateBuffer() {
+    std::string strPVal, strAVal, strDVal;
+
+    //strCurrentBuffer = PBuffer;
+    strPVal = convertToEmoMLPAD(EmoConPerson->pValue);
+    PBuffer = PBuffer + strPVal + " ";
+
+    //strCurrentBuffer = ABuffer;
+    strAVal = convertToEmoMLPAD(EmoConPerson->aValue);
+    ABuffer = ABuffer + strAVal + " ";
+
+    //strCurrentBuffer = DBuffer;
+    strDVal = convertToEmoMLPAD(EmoConPerson->dValue);
+    DBuffer = DBuffer + strDVal + " ";
+
+    (PADBufferCounter)++;
+}
+
+
+std::string
+cogaEmotionalAttendee::getPBuffer()
+{
+    return this->PBuffer;
+
+}
+
+
+std::string
+cogaEmotionalAttendee::getABuffer()
+{
+    return this->ABuffer;
+
+}
+
+std::string
+cogaEmotionalAttendee::getDBuffer()
+{
+    return this->DBuffer;
+
+}
+
+
+std::string
+cogaEmotionalAttendee::convertToEmoMLPAD(int number)
+{
+    float fPADValue;
+    std::string s;
+    std::stringstream out;
+
+    fPADValue = ((float)number + 100)/200;
+    out << fPADValue;
+    s = out.str();
+    return s;
+}
+
+std::string
+cogaEmotionalAttendee::intToString(int number)
+{
+    std::string s;
+    std::stringstream out;
+
+    out << number;
+    s = out.str();
+    return s;
+}
+
+//END OF EXTENSION4

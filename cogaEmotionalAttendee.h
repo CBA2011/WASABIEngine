@@ -76,7 +76,20 @@ public:
     bool update();
     void resetForces();
     bool simulationOn;
+    std::string convertToEmoMLPAD(int number);
+    std::string intToString(int number);
+    std::string getPBuffer();
+    std::string getABuffer();
+    std::string getDBuffer();
+    void resetBuffer();
 private:
+    //EXTENSTION:
+    std::string PBuffer;
+    std::string ABuffer;
+    std::string DBuffer;
+    int PADBufferCounter;
+    void updateBuffer();
+    //END OF EXTENSION
     void doMapping();
 };
 #endif

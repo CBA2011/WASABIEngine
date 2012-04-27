@@ -24,6 +24,7 @@
 ********************************************************************************/
 
 #include "WASABIEngine.h"
+#include "cogaAttendee.h"
 
 WASABIEngine::WASABIEngine(std::string emotionClass) {
     Class = "primary";
@@ -52,31 +53,36 @@ WASABIEngine::initClass(){
     //emoAttendees.push_back(ownEmoAttendee);
 }
 
+
 bool
 WASABIEngine::update() {
     std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
+
     bool success = false;
     for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
         cogaEmotionalAttendee* ea = (*iter_ea);
         success = ea->update();
-    }
+        }
+
     return success;
 }
 
 /** retrieve the padString for the cogaEmotionalAttendee with matching uid
  * return false in case of failure, fill string padString and return true otherwise
  */
+
 bool
 WASABIEngine::getPADString(std::string& padString, int uid) {
-    cogaEmotionalAttendee* ea = getEAfromID(uid);
-    if (!ea){
-        std::cout << "WASABIEngine::getPADString: uid " << uid << " not found!" << std::endl;
-        return false;
-    }
-    padString = ea->PADstring;
-    //std::cout << "WASABIEngine::getPADString: uid " << uid << " with padString \"" << padString << "\" returning true." << std::endl;
-    return true;
-}
+            cogaEmotionalAttendee* ea = getEAfromID(uid);
+            if (!ea){
+                std::cout << "WASABIEngine::getPADString: uid " << uid << " not found!" << std::endl;
+                return false;
+            }
+            padString = ea->PADstring;
+            //std::cout << "WASABIEngine::getPADString: uid " << uid << " with padString \"" << padString << "\" returning true." << std::endl;
+            return true;
+        }
+
 
 cogaEmotionalAttendee*
 WASABIEngine::getEAfromID(int uid) {
@@ -91,18 +97,6 @@ WASABIEngine::getEAfromID(int uid) {
     return NULL;
 }
 
-cogaEmotionalAttendee*
-WASABIEngine::getEAfromID(std::string globalID) {
-    std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
-    for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
-        cogaEmotionalAttendee* ea = (*iter_ea);
-        if (ea->getGlobalID() == globalID){
-            return ea;
-        }
-    }
-    std::cout << "WASABIEngine::getEAFromID: globalID " << globalID << " not found!" << std::endl;
-    return NULL;
-}
 
 bool
 WASABIEngine::emotionalImpulse(int impulse, int uid) {

@@ -29,6 +29,7 @@
 #include <stdio.h>
 #include <iostream>
 
+
 class WASABIENGINESHARED_EXPORT WASABIEngine {
 private:
     // the number of IDs also shows the number of Attendees, because the IDs start from 1 here.
@@ -43,7 +44,6 @@ public:
     void initClass();
     cogaEmotionalAttendee* getEAfromID(int uid = 1);
     cogaEmotionalAttendee* getEAfromID(std::string globalID);
-
     //cogaEmotionalAttendee* ownEmoAttendee;
     std::vector< cogaEmotionalAttendee* > emoAttendees;
     std::string Class;
