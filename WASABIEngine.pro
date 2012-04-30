@@ -1,17 +1,17 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2011-09-20T09:35:11
+# Project created by QtCreator 2012-04-30T15:06:26
 #
 #-------------------------------------------------
 
-QT       += core
+QT       -= gui
 
-TARGET = WASABIEngine
 TEMPLATE = lib
-
 DEFINES += WASABIENGINE_LIBRARY
 
 SOURCES += \
+    WASABIRunner.cc \
+    WASABIEngine.cc \
     SecondaryEmotion.cc \
     PrimaryEmotion.cc \
     EmotionDynamics.cc \
@@ -19,12 +19,10 @@ SOURCES += \
     EmotionContainer.cc \
     cogaEmotionalAttendee.cc \
     cogaAttendee.cc \
-    AffectiveState.cc \
-    WASABIRunner.cc \
-    WASABIEngine.cc
+    AffectiveState.cc
 
-HEADERS +=\
-        WASABIEngine_global.h \
+HEADERS += \
+    WASABIEngine.h \
     SecondaryEmotion.h \
     PrimaryEmotion.h \
     EmotionDynamics.h \
@@ -33,18 +31,7 @@ HEADERS +=\
     cogaEmotionalAttendee.h \
     cogaAttendee.h \
     AffectiveState.h \
-    WASABIEngine.h
-
-symbian {
-    MMP_RULES += EXPORTUNFROZEN
-    TARGET.UID3 = 0xE0335EA8
-    TARGET.CAPABILITY = 
-    TARGET.EPOCALLOWDLLDATA = 1
-    addFiles.sources = WASABIEngine.dll
-    addFiles.path = !:/sys/bin
-    DEPLOYMENT += addFiles
-}
-
+    WASABIEngine_global.h
 unix:!symbian {
     maemo5 {
         target.path = /opt/usr/lib
@@ -53,16 +40,3 @@ unix:!symbian {
     }
     INSTALLS += target
 }
-
-OTHER_FILES += \
-    README.txt
-
-
-
-
-
-
-
-
-
-

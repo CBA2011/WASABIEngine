@@ -82,11 +82,11 @@ public:
     std::string getABuffer();
     std::string getDBuffer();
     void resetBuffer();
-private:
-    //EXTENSTION:
     std::string PBuffer;
     std::string ABuffer;
     std::string DBuffer;
+private:
+    //EXTENSTION:
     int PADBufferCounter;
     void updateBuffer();
     //END OF EXTENSION

@@ -25,13 +25,13 @@
 
 #include "cogaAttendee.h"
 
-int cogaAttendee::globalCount = 0;
+//int cogaAttendee::globalCount = 0;
 
 cogaAttendee::cogaAttendee()
 {
-    globalCount++;
-    std::cout << "cogaAttendee: globalCount = " << globalCount << std::endl;
-    localID = globalCount;
+    //globalCount++;
+    //std::cout << "cogaAttendee: globalCount = " << globalCount << std::endl;
+    localID = localID++;
     globalID = "undef";
     _name = "John Doe";
 }

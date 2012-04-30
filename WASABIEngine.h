@@ -25,10 +25,10 @@
 
 #ifndef WASABIENGINE_H_
 #define WASABIENGINE_H_
+#include "WASABIEngine_global.h"
 #include "cogaEmotionalAttendee.h"
 #include <stdio.h>
 #include <iostream>
-
 
 class WASABIENGINESHARED_EXPORT WASABIEngine {
 private:
