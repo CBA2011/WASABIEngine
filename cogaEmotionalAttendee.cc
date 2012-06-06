@@ -219,8 +219,13 @@ cogaEmotionalAttendee::setAValue(int aval)
 void
 cogaEmotionalAttendee::setDValue(int dval)
 {
-    if (EmoConPerson)
-        EmoConPerson->dValue = dval;
+    if (EmoConPerson) {
+        // We have to do set the dom_target here, because
+        // the dValue will be reset after each simulation
+        // step.
+        //EmoConPerson->dValue = dval;
+        EmoConPerson->dom_target = dval;
+    }
 }
 
 void
