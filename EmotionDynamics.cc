@@ -41,6 +41,7 @@ EmotionDynamics::init()
 {
     mass = 1000;
     sxlast = sylast = sxt = syt = 0;
+    prevalence = 0; // implemented by Marius Klug 4.7.12
     sdom = sdomlast = 100;
     vxlast = vylast = vxt = vyt = vdom = vdomlast = 0;
     axlast = aylast = axt = ayt = adom = adomlast = 0;
@@ -180,9 +181,12 @@ EmotionDynamics::update(float _dt) {
     }
 
     // Fxt = -xTens * xPos, axt = Fx / mass --> axt = (-xTens * xPos) / mass
-    double Fx = (-(xTens) * sxlast);
-    double Fy = (-yTensTemp * tempPosY);
+    double Fx = (-(xTens) * (sxlast));
+    double Fy = (-yTensTemp * (tempPosY - prevalence)); // prevalence for the mood
     //cout << "Fx = " << Fx << endl;
+    //cout << "sxlast = " << sxlast << endl;
+    //cout << "xTens = " << xTens << endl;
+
     axt = Fx / mass;
     //xcout << "-- axt = " << axt << endl;
     vxt = axt * dt + vxlast;
@@ -213,10 +217,10 @@ EmotionDynamics::update(float _dt) {
     if (syt < -100)
         syt = -100;
 
-    if (((syt > 0 && sylast < 0) || (syt < 0 && sylast > 0))
+    if (((syt > prevalence && sylast < prevalence) || (syt < prevalence && sylast > prevalence)) // prevalence for the mood
             && !(positions2Reach->getYValid())) {
-        yPos = 0;
-        syt = sylast = 0;
+        yPos = prevalence;
+        syt = sylast = prevalence;
         vylast = 0;
         aylast = 0;
     }
@@ -227,9 +231,7 @@ EmotionDynamics::update(float _dt) {
         sylast = syt;
     }
 
-    //cout << "xPos = " << xPos << ", yPos = " << yPos << endl;
-
-    if (xPos < xReg && yPos < yReg && xPos > -(xReg) && yPos > -(yReg)){
+    if (xPos < xReg && yPos < (yReg + prevalence) && xPos > -(xReg) && yPos > -(yReg + prevalence)){ // boredom has to be calculated with prevalence
         if (z > -100) {
             z -= ((float)(boredom) / 1000);
         }
@@ -311,7 +313,7 @@ EmotionDynamics::initEmoDyn(){
                         std::stringstream sstr(word2);
                         if (!(word2.empty())) {
                             switch (returnIndex(word1,
-                                                "xTens yTens slope mass xReg yReg boredom")) {
+                                                "xTens yTens slope mass xReg yReg boredom prevalence")) {
                             case 1: //xTens
                                 sstr >> xTens;
                                 //xTens = intval(word2.c_str());
@@ -333,6 +335,15 @@ EmotionDynamics::initEmoDyn(){
                                 break;
                             case 7: //boredom
                                 sstr >> boredom;// = atoi(word2.c_str());
+                                break;
+                            case 8: //prevalence
+                                sstr >> prevalence;// = atoi(word2.c_str());
+                                if (prevalence > 100){ // prevalence must be set between -100 and 100
+                                    prevalence = 100;
+                                }
+                                else if (prevalence < -100){
+                                    prevalence = -100;
+                                }
                                 break;
                             default:
                                 cout << "Error: Unknown keyword \"" << word1

@@ -64,7 +64,7 @@ public:
     bool xSignChange, ySignChange;
     int xSign, ySign;
     EmoPos2Reach* positions2Reach;
-    int xTens, yTens, slope, xReg, yReg, boredom, mean;
+    int xTens, yTens, slope, xReg, yReg, boredom, mean, prevalence;
 
     float lastUpdate;
 
