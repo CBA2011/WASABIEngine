@@ -43,9 +43,8 @@ cogaEmotionalAttendee::cogaEmotionalAttendee()
     //EmoConPerson->uid_protected = false;
     PADconverter = new EmotionConverterPAD();
     simulationOn = true;
-    //EXTENSION1:
     resetBuffer();
-    //END OF EXTENSION1
+    initialized = false;
 }
 
 cogaEmotionalAttendee::~cogaEmotionalAttendee()

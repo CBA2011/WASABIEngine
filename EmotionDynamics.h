@@ -47,6 +47,7 @@ public:
     virtual void init();
     std::string dynFilename;
     std::string padFilename;
+    std::string xmlFilename;
     bool initEmoDyn();
     bool initEmoPAD();
 

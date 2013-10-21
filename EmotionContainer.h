@@ -144,6 +144,7 @@ public:
     // which will use the current PAD values to calculate each AffectiveState's likelihood accordingly.
     // This is used when we don't want to call "update" before calling this function.
     void updateAffectLikelihoods(bool forcePADupdate = false);
+    bool buildPrimaryEmotion(std::vector<float> v, std::string type, std::string decayFunc);
 
 protected:
     //std::string _uid;
@@ -157,8 +158,6 @@ protected:
     // our affectiveStates (active = false).
     // DEFAULT: false, i.e. we are only listening.
     bool active;
-
-    bool buildPrimaryEmotion(std::vector<float> v, std::string type, std::string decayFunc);
     bool buildSecondaryEmotion(std::string secfilename);
 };
 

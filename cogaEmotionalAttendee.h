@@ -33,7 +33,6 @@
 
 class WASABIENGINESHARED_EXPORT cogaEmotionalAttendee: public cogaAttendee
 {
-
 public:
 
     cogaEmotionalAttendee();
@@ -85,6 +84,7 @@ public:
     std::string PBuffer;
     std::string ABuffer;
     std::string DBuffer;
+    bool initialized;
 private:
     //EXTENSTION:
     int PADBufferCounter;

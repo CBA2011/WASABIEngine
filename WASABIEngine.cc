@@ -250,17 +250,22 @@ WASABIEngine::initAllEAs() {
     for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
         cogaEmotionalAttendee* ea = (*iter_ea);
         if (!initEA(ea)){
-            std::cout << "WASABIEngine::initAllEAs(): ERROR with ea '" << ea->getLocalID() << "'!" << std::endl;
+            /* In this case, we try to initialize by using the new (as of 17th of October 2013) xml file(s).
+             * However, we will use the QtXML 5.0 functionality OUTSIDE of this library so that this library does not depend on Qt.
+             */
+            std::cout << "WASABIEngine::initAllEAs(): EA '" << ea->getLocalID() << "' not initialized with emo_dyn and emo_pad files!\n"
+                      << "Will try to use xml file, if given in WASABI.ini" << std::endl;
         }
     }
 }
 
 bool
 WASABIEngine::initEA(cogaEmotionalAttendee* ea) {
+    ea->initialized = false;
     if (ea->EmoConPerson->initEmoDyn() && ea->EmoConPerson->initEmoPAD()) {
-        return true;
+        ea->initialized = true;
     }
-    return false;
+    return ea->initialized;
 }
 
 void
