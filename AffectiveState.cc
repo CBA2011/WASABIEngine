@@ -28,7 +28,7 @@
 #include <math.h>
 #include <algorithm>
 #include <limits>
-//#define INFINITY numeric_limits<double>::infinity( );
+#define INFINITY numeric_limits<double>::infinity( );
 
 using namespace std;
 

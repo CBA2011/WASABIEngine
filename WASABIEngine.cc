@@ -285,3 +285,20 @@ WASABIEngine::getNextID() {
     }
     return 0; //i.e. failure code
 }
+
+//TODO untested
+void WASABIEngine::removeAttendee(int localId){
+    std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
+    for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
+        cogaEmotionalAttendee* ea = (*iter_ea);
+        if(ea->getLocalID() == localId){
+            emoAttendees.erase(iter_ea);
+            break;
+        }
+    }
+}
+
+//TODO untested
+void WASABIEngine::removeAllAttendees(){
+    emoAttendees.clear();
+}

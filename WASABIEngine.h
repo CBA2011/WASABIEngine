@@ -38,7 +38,6 @@ private:
 
 public:
     int MaxSimulations;
-    WASABIEngine();
     WASABIEngine(std::string emotionclass = "primary");
     virtual ~WASABIEngine();
     void initClass();
@@ -66,6 +65,8 @@ public:
     void setMaxSimulations(int max);
     //returns the localID
     int addEmotionalAttendee(std::string name, std::string globalID = "undef");
+    void removeAttendee(int localId);
+    void removeAllAttendees();
 };
 
 
