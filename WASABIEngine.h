@@ -26,7 +26,8 @@
 #ifndef WASABIENGINE_H_
 #define WASABIENGINE_H_
 #include "WASABIEngine_global.h"
-#include "cogaEmotionalAttendee.h"
+//#include <concurrent/attendeeworkerthread.h>
+#include "concurrent/attendeeupdatethread.h"
 #include <stdio.h>
 #include <iostream>
 
@@ -36,6 +37,14 @@ private:
     int nextID;
     int getNextID();
 
+/*    AttendeeUpdateThread updateThread1;
+    AttendeeUpdateThread updateThread2;*/
+
+    //AttendeeWorkerThread* thread1;
+    //AttendeeWorkerThread* thread2;
+
+    //vector<AttendeeWorkerThread*> updateWorkerThreads;
+	
 public:
     int MaxSimulations;
     WASABIEngine();

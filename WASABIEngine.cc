@@ -24,7 +24,6 @@
 ********************************************************************************/
 
 #include "WASABIEngine.h"
-#include "cogaAttendee.h"
 
 WASABIEngine::WASABIEngine(std::string emotionClass) {
     Class = "primary";
@@ -49,6 +48,9 @@ WASABIEngine::~WASABIEngine() {
 void
 WASABIEngine::initClass(){
     MaxSimulations = 10;
+
+    //thread1 = new AttendeeWorkerThread;
+    //thread2 = new AttendeeWorkerThread;
     //nextID = 1;
     //ownEmoAttendee = new cogaEmotionalAttendee(getNextID());
     //emoAttendees.push_back(ownEmoAttendee);
@@ -64,7 +66,60 @@ WASABIEngine::update() {
         cogaEmotionalAttendee* ea = (*iter_ea);
         success = ea->update();
         }
+		
+    /*bool success = true;
+    updateThread1.start();
+    updateThread2.start();
+    updateThread1.join();
+    updateThread2.join();*/
 
+ //   cout << "inside update method" << endl;
+
+    /*bool success = true;
+    for(int i=0; i<emoAttendees.size()-1; i++){
+
+        //cout << "loop entered" << endl;
+
+        cogaEmotionalAttendee* att1 = emoAttendees[i];
+
+        //cout << "Att1 accessed (" << att1->getGlobalID() << ")" << endl;
+
+        cogaEmotionalAttendee* att2 = emoAttendees[i+1];
+
+        //cout << "Att2 accessed (" << att2->getGlobalID() << ")" << endl;
+
+        thread1->setAttendee(att1);
+        //cout << "Att1 set" << endl;
+
+        thread2->setAttendee(att2);
+        //cout << "Att2 set" << endl;
+
+        //cout << "Attendees set" << endl;
+
+        thread1->start();
+        thread2->start();
+
+        //cout << "Threads started" << endl;
+
+        thread1->join();
+        thread2->join();
+
+        //cout << "Threads joined" << endl;
+    }*/
+
+    /*vector<AttendeeWorkerThread*>::iterator iter_ea;
+
+    bool success = true;
+    for (iter_ea = updateWorkerThreads.begin(); iter_ea != updateWorkerThreads.end(); ++iter_ea){
+        AttendeeWorkerThread* thread = (*iter_ea);
+        thread->start();
+    }
+
+    for (iter_ea = updateWorkerThreads.begin(); iter_ea != updateWorkerThreads.end(); ++iter_ea){
+        AttendeeWorkerThread* thread = (*iter_ea);
+        thread->join();
+    }*/
+	
     return success;
 }
 
@@ -84,7 +139,6 @@ WASABIEngine::getPADString(std::string& padString, int uid) {
             return true;
         }
 
-
 cogaEmotionalAttendee*
 WASABIEngine::getEAfromID(int uid) {
     std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
@@ -97,7 +151,6 @@ WASABIEngine::getEAfromID(int uid) {
     std::cout << "WASABIEngine::getEAFromID: uid " << uid << " not found!" << std::endl;
     return NULL;
 }
-
 
 bool
 WASABIEngine::emotionalImpulse(int impulse, int uid) {
@@ -236,11 +289,24 @@ WASABIEngine::addEmotionalAttendee(std::string name, std::string globalID) {
         std::cout << "WASABIEngine::addEmotionalAttendee: ERROR maximum number of simulations (" << MaxSimulations << ") reached!" << std::endl;
         return 0;
     }
+	
     cogaEmotionalAttendee* newEA = new cogaEmotionalAttendee();
     newEA->setName(name);
     newEA->setLocalID(nID);
     newEA->setGlobalID(globalID);
     emoAttendees.push_back(newEA);
+
+    /*if(updateThread1.getSize() < updateThread2.getSize()){
+        updateThread1.addAttendee(newEA);
+    }
+    else{
+        updateThread2.addAttendee(newEA);
+    }*/
+
+    /*AttendeeWorkerThread* thread = new AttendeeWorkerThread();
+    thread->setAttendee(newEA);
+    updateWorkerThreads.push_back(thread);*/
+	
     return newEA->getLocalID();
 }
 
@@ -270,7 +336,7 @@ WASABIEngine::initEA(cogaEmotionalAttendee* ea) {
 
 void
 WASABIEngine::setMaxSimulations(int max){
-    if (max > 0 && max < 50) {
+    if (max > 0) {
         MaxSimulations = max;
         std::cout << "MaxSimulations set to " << MaxSimulations << std::endl;
     }
