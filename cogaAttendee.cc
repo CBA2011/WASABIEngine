@@ -34,6 +34,7 @@ cogaAttendee::cogaAttendee()
     localID = localID++;
     globalID = "undef";
     _name = "John Doe";
+    owner = "undef";
 }
 
 cogaAttendee::~cogaAttendee()
