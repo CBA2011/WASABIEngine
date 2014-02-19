@@ -316,16 +316,13 @@ int WASABIEngine::removeAllAttendeesOf(std::string owner){
 
     std::vector<cogaEmotionalAttendee*> attendeesToRemove;
 
-    //itn attendeesRemoved = 0;
     std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
     for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
         cogaEmotionalAttendee* ea = (*iter_ea);
 
         std::cout << "iterating" << std::endl;
         if(ea->getOwner() == owner){
-            //emoAttendees.erase(iter_ea);
             attendeesToRemove.push_back(ea);
-//            attendeesRemoved++;
         }
     }
 
@@ -334,8 +331,6 @@ int WASABIEngine::removeAllAttendeesOf(std::string owner){
     for (iter_ea2 = attendeesToRemove.begin(); iter_ea2 != attendeesToRemove.end(); ++iter_ea2){
         cogaEmotionalAttendee* ea = (*iter_ea2);
         std::cout << "Erasing attendee with id " << ea->getLocalID() << " and owner " << ea->getOwner() << std::endl;
-        //emoAttendees.erase(iter_ea2);
-//        nextID--;
         removeAttendee(ea->getGlobalID());
     }
 
