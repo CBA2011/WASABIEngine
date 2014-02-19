@@ -26,10 +26,12 @@
 #ifndef WASABIENGINE_H_
 #define WASABIENGINE_H_
 #include "WASABIEngine_global.h"
-//#include <concurrent/attendeeworkerthread.h>
+#include <concurrent/attendeeworkerthread.h>
 #include "concurrent/attendeeupdatethread.h"
 #include <stdio.h>
 #include <iostream>
+
+using namespace std;
 
 class WASABIENGINESHARED_EXPORT WASABIEngine {
 private:
@@ -37,13 +39,13 @@ private:
     int nextID;
     int getNextID();
 
-/*    AttendeeUpdateThread updateThread1;
-    AttendeeUpdateThread updateThread2;*/
+    AttendeeUpdateThread* updateThread1;
+    AttendeeUpdateThread* updateThread2;
 
-    //AttendeeWorkerThread* thread1;
-    //AttendeeWorkerThread* thread2;
+    AttendeeWorkerThread* thread1;
+    AttendeeWorkerThread* thread2;
 
-    //vector<AttendeeWorkerThread*> updateWorkerThreads;
+    vector<AttendeeWorkerThread*> updateWorkerThreads;
 	
 public:
     int MaxSimulations;
@@ -60,7 +62,7 @@ public:
     //bool loadAffectiveStates(std::string filebasename = "init", int uid = 1);
     void initAllEAs();
     bool initEA(cogaEmotionalAttendee* ea);
-    bool update();
+    bool update(bool threaded = false);
     bool getPADString(std::string& padString, int uid = 1);
     bool emotionalImpulse(int impulse, int uid = 1);
     bool resetToZero(int uid = 1);

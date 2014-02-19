@@ -49,8 +49,12 @@ void
 WASABIEngine::initClass(){
     MaxSimulations = 10;
 
-    //thread1 = new AttendeeWorkerThread;
-    //thread2 = new AttendeeWorkerThread;
+    thread1 = new AttendeeWorkerThread;
+    thread2 = new AttendeeWorkerThread;
+
+    updateThread1 = new AttendeeUpdateThread;
+    updateThread2 = new AttendeeUpdateThread;
+
     //nextID = 1;
     //ownEmoAttendee = new cogaEmotionalAttendee(getNextID());
     //emoAttendees.push_back(ownEmoAttendee);
@@ -58,67 +62,70 @@ WASABIEngine::initClass(){
 
 
 bool
-WASABIEngine::update() {
+WASABIEngine::update(bool threaded) {
     std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
 
     bool success = false;
-    for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
-        cogaEmotionalAttendee* ea = (*iter_ea);
-        success = ea->update();
+
+    if(threaded){
+        success = true;
+
+        /*updateThread1->start();
+        updateThread2->start();
+        updateThread1->join();
+        updateThread2->join();*/
+
+     //   cout << "inside update method" << endl;
+
+        /*for(int i=0; i<emoAttendees.size()-1; i++){
+
+            //cout << "loop entered" << endl;
+
+            cogaEmotionalAttendee* att1 = emoAttendees[i];
+
+            //cout << "Att1 accessed (" << att1->getGlobalID() << ")" << endl;
+
+            cogaEmotionalAttendee* att2 = emoAttendees[i+1];
+
+            //cout << "Att2 accessed (" << att2->getGlobalID() << ")" << endl;
+
+            thread1->setAttendee(att1);
+            //cout << "Att1 set" << endl;
+
+            thread2->setAttendee(att2);
+            //cout << "Att2 set" << endl;
+
+            //cout << "Attendees set" << endl;
+
+            thread1->start();
+            thread2->start();
+
+            //cout << "Threads started" << endl;
+
+            thread1->join();
+            thread2->join();
+
+            //cout << "Threads joined" << endl;
+        }*/
+
+        vector<AttendeeWorkerThread*>::iterator iter_ea;
+
+        for (iter_ea = updateWorkerThreads.begin(); iter_ea != updateWorkerThreads.end(); ++iter_ea){
+            AttendeeWorkerThread* thread = (*iter_ea);
+            thread->start();
         }
-		
-    /*bool success = true;
-    updateThread1.start();
-    updateThread2.start();
-    updateThread1.join();
-    updateThread2.join();*/
 
- //   cout << "inside update method" << endl;
-
-    /*bool success = true;
-    for(int i=0; i<emoAttendees.size()-1; i++){
-
-        //cout << "loop entered" << endl;
-
-        cogaEmotionalAttendee* att1 = emoAttendees[i];
-
-        //cout << "Att1 accessed (" << att1->getGlobalID() << ")" << endl;
-
-        cogaEmotionalAttendee* att2 = emoAttendees[i+1];
-
-        //cout << "Att2 accessed (" << att2->getGlobalID() << ")" << endl;
-
-        thread1->setAttendee(att1);
-        //cout << "Att1 set" << endl;
-
-        thread2->setAttendee(att2);
-        //cout << "Att2 set" << endl;
-
-        //cout << "Attendees set" << endl;
-
-        thread1->start();
-        thread2->start();
-
-        //cout << "Threads started" << endl;
-
-        thread1->join();
-        thread2->join();
-
-        //cout << "Threads joined" << endl;
-    }*/
-
-    /*vector<AttendeeWorkerThread*>::iterator iter_ea;
-
-    bool success = true;
-    for (iter_ea = updateWorkerThreads.begin(); iter_ea != updateWorkerThreads.end(); ++iter_ea){
-        AttendeeWorkerThread* thread = (*iter_ea);
-        thread->start();
+        for (iter_ea = updateWorkerThreads.begin(); iter_ea != updateWorkerThreads.end(); ++iter_ea){
+            AttendeeWorkerThread* thread = (*iter_ea);
+            thread->join();
+        }
     }
-
-    for (iter_ea = updateWorkerThreads.begin(); iter_ea != updateWorkerThreads.end(); ++iter_ea){
-        AttendeeWorkerThread* thread = (*iter_ea);
-        thread->join();
-    }*/
+    else{
+        for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
+            cogaEmotionalAttendee* ea = (*iter_ea);
+            success = ea->update();
+        }
+    }
 	
     return success;
 }
@@ -296,16 +303,18 @@ WASABIEngine::addEmotionalAttendee(std::string name, std::string globalID) {
     newEA->setGlobalID(globalID);
     emoAttendees.push_back(newEA);
 
-    /*if(updateThread1.getSize() < updateThread2.getSize()){
-        updateThread1.addAttendee(newEA);
+    ////////////////////////////////////////////////////////
+    if(updateThread1->getSize() < updateThread2->getSize()){
+        updateThread1->addAttendee(newEA);
     }
     else{
-        updateThread2.addAttendee(newEA);
-    }*/
-
-    /*AttendeeWorkerThread* thread = new AttendeeWorkerThread();
+        updateThread2->addAttendee(newEA);
+    }
+    ////////////////////////////////////////////////////////
+    AttendeeWorkerThread* thread = new AttendeeWorkerThread();
     thread->setAttendee(newEA);
-    updateWorkerThreads.push_back(thread);*/
+    updateWorkerThreads.push_back(thread);
+    ////////////////////////////////////////////////////////
 	
     return newEA->getLocalID();
 }
