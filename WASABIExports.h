@@ -15,6 +15,4 @@ extern "C" WASABIENGINESHARED_EXPORT void removeAttendee(int localId);
 extern "C" WASABIENGINESHARED_EXPORT void removeAllAttendees();
 extern "C" WASABIENGINESHARED_EXPORT void onDestroy();
 
-
-
 #endif // WASABIEXPORTS_H
