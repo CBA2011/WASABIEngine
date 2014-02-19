@@ -305,7 +305,6 @@ bool WASABIEngine::removeAttendee(std::string globalId){
         cogaEmotionalAttendee* ea = (*iter_ea);
         if(ea->getGlobalID() == globalId){
             emoAttendees.erase(iter_ea);
-            nextID--;
             return true;
         }
     }
