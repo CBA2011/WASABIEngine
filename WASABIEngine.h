@@ -36,6 +36,8 @@ private:
     int nextID;
     int getNextID();
 
+    std::vector<cogaEmotionalAttendee*> attendeesToRemove;
+
 public:
     int MaxSimulations;
     WASABIEngine();
@@ -66,6 +68,8 @@ public:
     void setMaxSimulations(int max);
     //returns the localID
     int addEmotionalAttendee(std::string name, std::string globalID = "undef");
+    bool removeAttendee(std::string globalId);
+    int removeAllAttendeesOf(std::string owner);
 };
 
 
