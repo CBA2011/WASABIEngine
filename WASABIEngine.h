@@ -65,7 +65,7 @@ public:
     void setMaxSimulations(int max);
     //returns the localID
     int addEmotionalAttendee(std::string name, std::string globalID = "undef");
-    void removeAttendee(int localId);
+    bool removeAttendee(int localId);
     void removeAllAttendees();
 };
 

@@ -44,10 +44,12 @@ void updateWasabi(){
     wasabi->update();
 }
 
+//TODO add boolean return value
 void removeAttendee(int localId){
     wasabi->removeAttendee(localId);
 }
 
+//TODO return integer return value
 void removeAllAttendees(){
     checkWasabiInstance();
 

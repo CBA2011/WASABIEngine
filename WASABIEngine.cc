@@ -48,7 +48,7 @@ WASABIEngine::~WASABIEngine() {
 
 void
 WASABIEngine::initClass(){
-    MaxSimulations = 10;
+    MaxSimulations = 1000;
     //nextID = 1;
     //ownEmoAttendee = new cogaEmotionalAttendee(getNextID());
     //emoAttendees.push_back(ownEmoAttendee);
@@ -270,7 +270,7 @@ WASABIEngine::initEA(cogaEmotionalAttendee* ea) {
 
 void
 WASABIEngine::setMaxSimulations(int max){
-    if (max > 0 && max < 50) {
+    if (max > 0) {
         MaxSimulations = max;
         std::cout << "MaxSimulations set to " << MaxSimulations << std::endl;
     }
@@ -287,23 +287,25 @@ WASABIEngine::getNextID() {
 }
 
 //TODO: Method was not tested
-void WASABIEngine::removeAttendee(int localId){
+bool WASABIEngine::removeAttendee(int localId){
     std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
     for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
         cogaEmotionalAttendee* ea = (*iter_ea);
         if(ea->getLocalID() == localId){
             emoAttendees.erase(iter_ea);
-            nextID--;
-            break;
+            return true;
         }
     }
+    return false;
 }
 
 //TODO: Method was not tested
+//TODO: implement versions which can be used fur udp AND dll version.
 void WASABIEngine::removeAllAttendees(){
+
     std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
     for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
-        emoAttendees.erase(iter_ea);
-        nextID--;
+        cogaEmotionalAttendee* ea = (*iter_ea);
+        removeAttendee(ea->getLocalID());
     }
 }
