@@ -300,12 +300,26 @@ bool WASABIEngine::removeAttendee(int localId){
 }
 
 //TODO: Method was not tested
-//TODO: implement versions which can be used fur udp AND dll version.
+//TODO: implement versions which can be used for udp AND dll version.
 void WASABIEngine::removeAllAttendees(){
+
+    /*std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
+    for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
+        cogaEmotionalAttendee* ea = (*iter_ea);
+        removeAttendee(ea->getLocalID());
+    }*/
+
+    std::vector<cogaEmotionalAttendee*> attendeesToRemove;
 
     std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
     for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
         cogaEmotionalAttendee* ea = (*iter_ea);
+        attendeesToRemove.push_back(ea);
+    }
+
+    std::vector<cogaEmotionalAttendee*>::iterator iter_ea2;
+    for (iter_ea2 = attendeesToRemove.begin(); iter_ea2 != attendeesToRemove.end(); ++iter_ea2){
+        cogaEmotionalAttendee* ea = (*iter_ea2);
         removeAttendee(ea->getLocalID());
     }
 }

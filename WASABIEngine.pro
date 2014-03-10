@@ -20,7 +20,8 @@ SOURCES += \
     cogaEmotionalAttendee.cc \
     cogaAttendee.cc \
     AffectiveState.cc \
-    WASABIExports.cpp
+    WASABIExports.cc \
+    Mutex.cc
 
 HEADERS += \
     WASABIEngine.h \
@@ -33,7 +34,8 @@ HEADERS += \
     cogaAttendee.h \
     AffectiveState.h \
     WASABIEngine_global.h \
-    WASABIExports.h
+    WASABIExports.h \
+    Mutex.h
 unix:!symbian {
     maemo5 {
         target.path = /opt/usr/lib
