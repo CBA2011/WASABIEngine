@@ -3,10 +3,13 @@
 
 #include "WASABIEngine.h"
 #include "WASABIEngine_global.h"
+#include "Mutex.h"
 
 static WASABIEngine* wasabi = NULL;
+static Mutex mutex;
 
 void checkWasabiInstance();
+extern "C" WASABIENGINESHARED_EXPORT bool instanceExists();
 extern "C" WASABIENGINESHARED_EXPORT int addAgent(char* globalId);
 extern "C" WASABIENGINESHARED_EXPORT char* getPad(int localId);
 extern "C" WASABIENGINESHARED_EXPORT bool isInitialized(int localId);
