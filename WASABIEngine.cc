@@ -47,7 +47,7 @@ WASABIEngine::~WASABIEngine() {
 
 void
 WASABIEngine::initClass(){
-    MaxSimulations = 10;
+    MaxSimulations = 1000;
 
     thread1 = new AttendeeWorkerThread;
     thread2 = new AttendeeWorkerThread;
