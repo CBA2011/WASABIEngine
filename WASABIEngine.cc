@@ -70,10 +70,10 @@ WASABIEngine::update(bool threaded) {
     if(threaded){
         success = true;
 
-        /*updateThread1->start();
+        updateThread1->start();
         updateThread2->start();
         updateThread1->join();
-        updateThread2->join();*/
+        updateThread2->join();
 
      //   cout << "inside update method" << endl;
 
@@ -108,7 +108,7 @@ WASABIEngine::update(bool threaded) {
             //cout << "Threads joined" << endl;
         }*/
 
-        vector<AttendeeWorkerThread*>::iterator iter_ea;
+        /*vector<AttendeeWorkerThread*>::iterator iter_ea;
 
         for (iter_ea = updateWorkerThreads.begin(); iter_ea != updateWorkerThreads.end(); ++iter_ea){
             AttendeeWorkerThread* thread = (*iter_ea);
@@ -118,7 +118,7 @@ WASABIEngine::update(bool threaded) {
         for (iter_ea = updateWorkerThreads.begin(); iter_ea != updateWorkerThreads.end(); ++iter_ea){
             AttendeeWorkerThread* thread = (*iter_ea);
             thread->join();
-        }
+        }*/
     }
     else{
         for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
