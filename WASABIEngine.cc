@@ -35,6 +35,7 @@ WASABIEngine::WASABIEngine(std::string emotionClass) {
         std::cerr << "WASABIEngine: emotionClass \"" << emotionClass << "\" not supported.";
     }
     nextID = 1;
+    currentAgentsCounter = 0;
     initClass();
 }
 
@@ -253,6 +254,7 @@ WASABIEngine::addEmotionalAttendee(std::string name, std::string globalID) {
     newEA->setLocalID(nID);
     newEA->setGlobalID(globalID);
     emoAttendees.push_back(newEA);
+    currentAgentsCounter++;
     return newEA->getLocalID();
 }
 
@@ -291,7 +293,7 @@ WASABIEngine::setMaxSimulations(int max){
 int
 WASABIEngine::getNextID() {
     int ID = nextID;
-    if (nextID <= MaxSimulations) {
+    if (currentAgentsCounter+1 <= MaxSimulations) {
         nextID++;
         return ID;
     }
@@ -305,6 +307,7 @@ bool WASABIEngine::removeAttendee(std::string globalId){
         cogaEmotionalAttendee* ea = (*iter_ea);
         if(ea->getGlobalID() == globalId){
             emoAttendees.erase(iter_ea);
+            currentAgentsCounter--;
             return true;
         }
     }

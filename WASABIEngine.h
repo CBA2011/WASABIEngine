@@ -34,6 +34,7 @@ class WASABIENGINESHARED_EXPORT WASABIEngine {
 private:
     // the number of IDs also shows the number of Attendees, because the IDs start from 1 here.
     int nextID;
+    int currentAgentsCounter;
     int getNextID();
 
     std::vector<cogaEmotionalAttendee*> attendeesToRemove;
