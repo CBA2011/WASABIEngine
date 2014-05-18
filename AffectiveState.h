@@ -133,8 +133,6 @@ public :
     /// Default Constructor
     AffectiveState();
     virtual ~AffectiveState();
-    /// Copy Constructor
-    AffectiveState(const AffectiveState &as);
 
     AffectiveState(std::vector<AffectPolygon*> ap_vec);
     AffectiveState(AffectPolygon* ap);

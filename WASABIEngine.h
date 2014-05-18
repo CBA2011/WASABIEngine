@@ -41,7 +41,6 @@ private:
 
 public:
     int MaxSimulations;
-    WASABIEngine();
     WASABIEngine(std::string emotionclass = "primary");
     virtual ~WASABIEngine();
     void initClass();
