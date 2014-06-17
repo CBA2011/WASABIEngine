@@ -1,4 +1,5 @@
 Freiburg, 23rd of September, 2011
+UPDATED 22nd of October, 2013
 
 [W]ASABI [A]ffect [S]imulation [A]rchitecture for [B]elievable [I]nteractivity
 Version 1.0
@@ -8,9 +9,9 @@ All rights reserved.
 Contact: Christian Becker-Asano (christian (at) becker-asano (dot) de)
 
 1. Compiling
-This library can be compiled as shared library (dll) using "Qt Creator" version 2.3.0 (MinGW4.4, Qt4.7.3)
+This library can be compiled as shared library (dll) using "Qt Creator" version 2.8.1 (MSVC 2010, Qt5.1.1)
 under MS Windows 7. It is, however, not depending on Qt in any way.
-To compile the library yourself it might be easiest to download the free "Qt SDK" and then
+To compile the library yourself it might be easiest to download the free "Qt SDK" from www.qt-project.org and then
 open the WASABIEngine.pro file.
 
 2. Documentation
