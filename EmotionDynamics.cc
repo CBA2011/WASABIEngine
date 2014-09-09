@@ -63,7 +63,7 @@ EmotionDynamics::init()
 
     xPos = 0;
     yPos = 0;
-    zPos = 0;
+    zPos = 100;
 }
 
 /*!
