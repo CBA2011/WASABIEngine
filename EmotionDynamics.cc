@@ -60,6 +60,10 @@ EmotionDynamics::init()
     dynFilename = "init.emo_dyn";
     padFilename = "init.emo_pad";
     xmlFilename = "WASABI_agent_default.xml";
+
+    xPos = 0;
+    yPos = 0;
+    zPos = 0;
 }
 
 /*!
