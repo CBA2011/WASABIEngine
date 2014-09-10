@@ -40,10 +40,13 @@ public:
     virtual int getLocalID() {return localID;}
     virtual std::string getGlobalID() {return globalID;}
     virtual void setGlobalID(std::string newGlobalID) = 0;
+    virtual std::string getOwner(){return owner;}
+    virtual void setOwner(std::string newOwner){owner = newOwner;}
 protected:
     std::string _name;
     int localID;
     std::string globalID;
     static int globalCount;
+    std::string owner;
 };
 #endif

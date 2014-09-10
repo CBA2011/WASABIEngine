@@ -51,7 +51,7 @@ SecondaryEmotion::SecondaryEmotion(AffectPolygon* ap)
 bool
 SecondaryEmotion::loadFromFile(string filename){
     ifstream file(filename.c_str());
-    if (file == 0) { // bailing out
+    if (!file) { // bailing out
         cerr << "SecondaryEmotion::SecondaryEmotion: filename \"" << filename << "\" not found!" << endl;
         return false;
     } // ok, we will read the contents now

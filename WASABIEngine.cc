@@ -35,6 +35,7 @@ WASABIEngine::WASABIEngine(std::string emotionClass) {
         std::cerr << "WASABIEngine: emotionClass \"" << emotionClass << "\" not supported.";
     }
     nextID = 1;
+    currentAgentsCounter = 0;
     initClass();
 }
 
@@ -98,6 +99,18 @@ WASABIEngine::getEAfromID(int uid) {
     return NULL;
 }
 
+cogaEmotionalAttendee*
+WASABIEngine::getEAfromID(std::string globalId) {
+    std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
+    for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
+        cogaEmotionalAttendee* ea = (*iter_ea);
+        if (ea->getGlobalID() == globalId){
+            return ea;
+        }
+    }
+    std::cout << "WASABIEngine::getEAFromID: globalId " << globalId << " not found!" << std::endl;
+    return NULL;
+}
 
 bool
 WASABIEngine::emotionalImpulse(int impulse, int uid) {
@@ -241,6 +254,7 @@ WASABIEngine::addEmotionalAttendee(std::string name, std::string globalID) {
     newEA->setLocalID(nID);
     newEA->setGlobalID(globalID);
     emoAttendees.push_back(newEA);
+    currentAgentsCounter++;
     return newEA->getLocalID();
 }
 
@@ -270,7 +284,7 @@ WASABIEngine::initEA(cogaEmotionalAttendee* ea) {
 
 void
 WASABIEngine::setMaxSimulations(int max){
-    if (max > 0 && max < 50) {
+    if (max > 0) {
         MaxSimulations = max;
         std::cout << "MaxSimulations set to " << MaxSimulations << std::endl;
     }
@@ -279,9 +293,49 @@ WASABIEngine::setMaxSimulations(int max){
 int
 WASABIEngine::getNextID() {
     int ID = nextID;
-    if (nextID <= MaxSimulations) {
+    if (currentAgentsCounter+1 <= MaxSimulations) {
         nextID++;
         return ID;
     }
     return 0; //i.e. failure code
+}
+
+//TODO: test
+bool WASABIEngine::removeAttendee(std::string globalId){
+    std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
+    for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
+        cogaEmotionalAttendee* ea = (*iter_ea);
+        if(ea->getGlobalID() == globalId){
+            emoAttendees.erase(iter_ea);
+            currentAgentsCounter--;
+            return true;
+        }
+    }
+    return false;
+}
+
+//TODO: test
+int WASABIEngine::removeAllAttendeesOf(std::string owner){
+
+    std::vector<cogaEmotionalAttendee*> attendeesToRemove;
+
+    std::vector<cogaEmotionalAttendee*>::iterator iter_ea;
+    for (iter_ea = emoAttendees.begin(); iter_ea != emoAttendees.end(); ++iter_ea){
+        cogaEmotionalAttendee* ea = (*iter_ea);
+
+        std::cout << "iterating" << std::endl;
+        if(ea->getOwner() == owner){
+            attendeesToRemove.push_back(ea);
+        }
+    }
+
+    std::cout << "Now beginning to iterate over the erase list" << std::endl;
+    std::vector<cogaEmotionalAttendee*>::iterator iter_ea2;
+    for (iter_ea2 = attendeesToRemove.begin(); iter_ea2 != attendeesToRemove.end(); ++iter_ea2){
+        cogaEmotionalAttendee* ea = (*iter_ea2);
+        std::cout << "Erasing attendee with id " << ea->getLocalID() << " and owner " << ea->getOwner() << std::endl;
+        removeAttendee(ea->getGlobalID());
+    }
+
+    return attendeesToRemove.size();
 }

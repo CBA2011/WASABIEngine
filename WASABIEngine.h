@@ -34,11 +34,13 @@ class WASABIENGINESHARED_EXPORT WASABIEngine {
 private:
     // the number of IDs also shows the number of Attendees, because the IDs start from 1 here.
     int nextID;
+    int currentAgentsCounter;
     int getNextID();
+
+    std::vector<cogaEmotionalAttendee*> attendeesToRemove;
 
 public:
     int MaxSimulations;
-    WASABIEngine();
     WASABIEngine(std::string emotionclass = "primary");
     virtual ~WASABIEngine();
     void initClass();
@@ -66,6 +68,8 @@ public:
     void setMaxSimulations(int max);
     //returns the localID
     int addEmotionalAttendee(std::string name, std::string globalID = "undef");
+    bool removeAttendee(std::string globalId);
+    int removeAllAttendeesOf(std::string owner);
 };
 
 
