@@ -23,7 +23,7 @@
 **
 ********************************************************************************/
 
-#include  "SecondaryEmotion.h"
+#include "../includes/SecondaryEmotion.h"
 #include <fstream>      // for file-I/O
 #include <iostream>
 #include <sstream>

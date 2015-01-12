@@ -23,8 +23,8 @@
 **
 ********************************************************************************/
 
-#include  "AffectiveState.h"
-#include  "EmotionDynamics.h"
+#include  "../includes/AffectiveState.h"
+#include  "../includes/EmotionDynamics.h"
 #include <math.h>
 #include <algorithm>
 #include <limits>

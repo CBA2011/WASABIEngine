@@ -23,7 +23,7 @@
 **
 ********************************************************************************/
 
-#include  "PrimaryEmotion.h"
+#include "../includes/PrimaryEmotion.h"
 
 using namespace std;
 

@@ -23,8 +23,8 @@
 **
 ********************************************************************************/
 
-#include "WASABIEngine.h"
-#include "cogaAttendee.h"
+#include "../includes/WASABIEngine.h"
+#include "../includes/cogaAttendee.h"
 
 WASABIEngine::WASABIEngine(std::string emotionClass) {
     Class = "primary";

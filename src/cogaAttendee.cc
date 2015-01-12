@@ -23,7 +23,7 @@
 **
 ********************************************************************************/
 
-#include "cogaAttendee.h"
+#include "../includes/cogaAttendee.h"
 
 //int cogaAttendee::globalCount = 0;
 

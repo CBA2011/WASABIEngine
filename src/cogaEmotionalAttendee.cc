@@ -23,8 +23,8 @@
 **
 ********************************************************************************/
 
-#include "cogaEmotionalAttendee.h"
-#include "EmotionContainer.h"
+#include "../includes/cogaEmotionalAttendee.h"
+#include "../includes/EmotionContainer.h"
 #include <iostream>
 #include <sstream>
 

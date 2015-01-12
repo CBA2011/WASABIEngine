@@ -24,7 +24,7 @@
 ********************************************************************************/
 
 #include <iostream>
-#include "cogaEmotionalAttendee.h"
+#include "../includes/cogaEmotionalAttendee.h"
 
 cogaEmotionalAttendee* ownEmoAttendee;
 cogaEmotionalAttendee* otherEmoAttendee;

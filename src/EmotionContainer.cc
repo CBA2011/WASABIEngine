@@ -23,10 +23,10 @@
 **
 ********************************************************************************/
 
-#include "EmotionContainer.h"
-#include "PrimaryEmotion.h"
-#include "SecondaryEmotion.h"
-#include "EmotionDynamics.h"
+#include "../includes/EmotionContainer.h"
+#include "../includes/PrimaryEmotion.h"
+#include "../includes/SecondaryEmotion.h"
+#include "../includes/EmotionDynamics.h"
 #include <fstream>      // for file-I/O
 #include <typeinfo>
 #include <sstream>

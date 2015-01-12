@@ -23,7 +23,7 @@
 **
 ********************************************************************************/
 
-#include "EmotionConverter.h"
+#include "../includes/EmotionConverter.h"
 #include <stdlib.h>
 
 using namespace std;

@@ -23,7 +23,7 @@
 **
 ********************************************************************************/
 
-#include  "EmotionDynamics.h"
+#include "../includes/EmotionDynamics.h"
 #include <fstream>      // for File-I/O
 #include <iostream>
 #include <sstream>
