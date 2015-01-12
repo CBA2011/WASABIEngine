@@ -1,3 +1,20 @@
+# WASABIEngine
+**Attention**: Compilation via `qmake` is broken as for now.
+
+## CMake compilation
+### Prerequisites
+- CMake >= Version 2.8.11
+- Qt5
+
+### Compilation Process
+To compile the WASABIEngine with cmake navigate a terminal instance to the root folder of your local copy of this repository and execute the following commands:
+
+	mkdir build
+	cd build/
+	cmake ..
+	make
+
+## Original README.txt
 Freiburg, 23rd of September, 2011
 UPDATED 22nd of October, 2013
 
