@@ -10,28 +10,28 @@ TEMPLATE = lib
 DEFINES += WASABIENGINE_LIBRARY
 
 SOURCES += \
-    WASABIRunner.cc \
-    WASABIEngine.cc \
-    SecondaryEmotion.cc \
-    PrimaryEmotion.cc \
-    EmotionDynamics.cc \
-    EmotionConverter.cc \
-    EmotionContainer.cc \
-    cogaEmotionalAttendee.cc \
-    cogaAttendee.cc \
-    AffectiveState.cc
+    src/WASABIRunner.cc \
+    src/WASABIEngine.cc \
+    src/SecondaryEmotion.cc \
+    src/PrimaryEmotion.cc \
+    src/EmotionDynamics.cc \
+    src/EmotionConverter.cc \
+    src/EmotionContainer.cc \
+    src/cogaEmotionalAttendee.cc \
+    src/cogaAttendee.cc \
+    src/AffectiveState.cc
 
 HEADERS += \
-    WASABIEngine.h \
-    SecondaryEmotion.h \
-    PrimaryEmotion.h \
-    EmotionDynamics.h \
-    EmotionConverter.h \
-    EmotionContainer.h \
-    cogaEmotionalAttendee.h \
-    cogaAttendee.h \
-    AffectiveState.h \
-    WASABIEngine_global.h
+    includes/WASABIEngine.h \
+    includes/SecondaryEmotion.h \
+    includes/PrimaryEmotion.h \
+    includes/EmotionDynamics.h \
+    includes/EmotionConverter.h \
+    includes/EmotionContainer.h \
+    includes/cogaEmotionalAttendee.h \
+    includes/cogaAttendee.h \
+    includes/AffectiveState.h \
+    includes/WASABIEngine_global.h
 unix:!symbian {
     maemo5 {
         target.path = /opt/usr/lib

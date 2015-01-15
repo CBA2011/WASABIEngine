@@ -1,0 +1,2 @@
+# Ignore Qt user settings
+*.pro.user
