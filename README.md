@@ -1,6 +1,4 @@
 # WASABIEngine
-**Attention**: Compilation via `qmake` is broken as for now.
-
 ## CMake compilation
 ### Prerequisites
 - CMake >= Version 2.8.11
