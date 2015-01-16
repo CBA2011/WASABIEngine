@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
                     filelogging = true;
                     cout << "filelogging enabled" << endl;
                 }
-                unsigned int pos = option.find("-with-agent:", 0);
+                size_t pos = option.find("-with-agent:", 0);
                 if (pos != std::string::npos) { //(option == "Emma" || option == "EMMA") {
                     Character_Name = option.substr(12);
                     std::cout << "Character_Name set to \"" << Character_Name << "\"" << std::endl;
@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
                 else {
                     cout << "Option: -with-agent not found" << endl;
                 }
-                unsigned int pos2 = option.find("-with-emotions:", 0);
+                size_t pos2 = option.find("-with-emotions:", 0);
                 if (pos2 != std::string::npos) {
                     cout << "FOUND -with-emotions option!" << endl;
                     Class = option.substr(15);

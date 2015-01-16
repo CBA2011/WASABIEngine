@@ -31,7 +31,7 @@ cogaAttendee::cogaAttendee()
 {
     //globalCount++;
     //std::cout << "cogaAttendee: globalCount = " << globalCount << std::endl;
-    localID = localID++;
+    localID++;
     globalID = "undef";
     _name = "John Doe";
     owner = "undef";
