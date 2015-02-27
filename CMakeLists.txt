@@ -22,4 +22,4 @@ add_library(WASABIEngine SHARED
 )
 
 # Link Qt to the library
-qt5_use_modules(WASABIEngine Core)
+target_link_libraries(WASABIEngine Qt5::Core)
